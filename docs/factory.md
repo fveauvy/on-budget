@@ -299,7 +299,7 @@ Design prototypes, from Claude Design through `/design-sync` or from Figma, ente
 Each slice ships something the household can use and pulls in only the factory setup and spikes it needs; the rest waits. Steps marked *(maintainer)* need the maintainer's accounts, devices or settings. `SPEC.md` defines what each slice must do.
 
 0. **A safe repository** (one session, before any code).
-   - Before the first commit: the research notes carry no personal passages; `docs/research/naming.md` stays in `.git/info/exclude`, and only the decision is committed, as ADR 0020; `.git/info/personal-terms` lists the terms to refuse; and `AGENTS.md` has its Read first and Pull requests sections ([Agent setup](#agent-setup)). *(maintainer)* Send SP-01's questions to the data provider.
+   - Before the first commit: the research notes carry no personal passages; `docs/research/naming.md` stays in `.git/info/exclude`, and only the decision is committed, as ADR 0020; `.git/info/personal-terms` lists the terms to refuse; and `AGENTS.md` has its Read first and Pull requests sections ([Agent setup](#agent-setup)).
    - Add `LICENSE` (MIT), `SECURITY.md` and `.github/CODEOWNERS`; a minimal `flake.nix` devShell and `.envrc`; a `justfile` with `fmt`, `check` and `ci-hygiene`; `treefmt.toml`; a root `package.json` with Biome; `lefthook.yml` with gitleaks, typos and the personal-terms check; `.gitleaks.toml` with the IBAN rule.
    - Add `ci.yml` with `changes`, `hygiene` and `gate`, plus `.github/workflows/actions.lock` from `gh actions-lock`.
    - Merge all of it, with `AGENTS.md`, `CLAUDE.md`, `PRODUCT.md`, `GLOSSARY.md`, `SPEC.md` and `docs/` (naming.md excepted), as the first PR. *(maintainer)* Then set up the machine account, and turn on the repository settings, the `main-checks` and `main-review` rulesets, CodeQL default setup and the labels.
@@ -319,8 +319,8 @@ Each slice ships something the household can use and pulls in only the factory s
    - Adds: `packages.default`, `nixosModules.default`, `templates.ops` and the `nix` job; the release App, release-please, `release.yml` and the Cachix cache; the NSE target; *(maintainer)* the app record, household members as App Store Connect users (ADR 0019), Xcode Cloud's repository connection and workflow, and the first internal build (F1).
    - Spikes: SP-03, SP-04, SP-05, SP-06 *(maintainer)*, SP-10, SP-11, SP-16, SP-21, SP-24, SP-25, SP-26.
    - Done when the household uses the tailnet instance from TestFlight builds and the web app, and a restore check passes.
-5. **Bank connections.** Provider applications, consent and renewal, refresh slots and the fetch budget, the fake-provider contract kit and the nightly sandbox test. Members other than the owner wait for SP-01's answer.
-   - Spikes: SP-01, SP-12 and SP-13 *(maintainer)*.
+5. **Bank connections.** The owner's provider application, consent and renewal, refresh slots and the fetch budget, the fake-provider contract kit and the nightly sandbox test. Other members import files.
+   - Spikes: SP-12 and SP-13 *(maintainer)*.
    - Done when a week of background refreshes at each supported bank stays within the budget without a rate limit.
 6. **The watch.** The watch target with the read-only glance and one complication family; GlanceBuilder, `GET /api/v1/glance` and WatchRelay.
    - Spikes: the Apple halves of SP-15 and SP-19, SP-17's watch part, SP-22 and SP-31 *(maintainer)*.

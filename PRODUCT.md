@@ -43,7 +43,7 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - Each month, as income arrives: give every euro a role (fixed charges, discretionary spending, goals).
 - Planning and settings on a big screen: the Mac app or the web app on any computer.
 - Two people may edit the same shared budget, sometimes offline, each on several devices.
-- Each person connects their own banks with their own bank-data provider credentials, or imports bank files. Every app keeps working offline and syncs on reconnect.
+- The owner connects their own banks through their own Enable Banking application; other members import bank files. Every app keeps working offline and syncs on reconnect.
 - The owner administers the instance: households (for example a test household and a production household), members, bank connections, backups and upgrades.
 
 ## Capabilities and Constraints
@@ -54,7 +54,7 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Private network friendly**: every feature works when the instance is reachable only over a private network such as Tailscale; nothing requires inbound connections from the internet.
 - **Data protection**: each instance relies on the GDPR household exemption, so the apps have no consent step for data processing and no processing notice; self-hosters who use Shoestring beyond their household handle their own compliance.
 - **Test household**: the owner can fill a household with generated fictitious data, without bank connections, to try new features. Upgrades are rehearsed on a throwaway instance restored from a backup.
-- **Bank sync**: first supported banks are BoursoBank, Crédit Agricole Aquitaine and Crédit Mutuel du Sud-Ouest (Arkéa group). Read-only: transaction history is all the product needs. Each person connects their own accounts; file import is the fallback. Must be secure and stable. Provider: undecided.
+- **Bank sync**: first supported banks are BoursoBank, Crédit Agricole Aquitaine and Crédit Mutuel du Sud-Ouest (Arkéa group). Read-only: transaction history is all the product needs. The owner connects their own accounts through Enable Banking (ADR 0012); other members, and banks it can't read, use file import. Must be secure and stable.
 - **Budget engine**, all four confirmed by the owner:
   - plans run on calendar months;
   - zero-based allocation: every euro gets a role;
@@ -77,7 +77,6 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Regional settings** for any European country: date and time formats, 12- or 24-hour clock, time zones, currencies, number formatting, and other locale-sensitive data.
 - **Currencies**: one base currency per household for now.
 - **Native app distribution**: the maintainer's household installs the native apps through the maintainer's TestFlight; other self-hosters use their instance's web app or build the native apps with their own Apple developer account. No App Store listing and no push relay.
-- **Undecided**: the bank provider: Enable Banking is recommended, pending its written terms (SP-01).
 
 ## Brand Commitments
 

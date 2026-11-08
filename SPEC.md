@@ -12,7 +12,7 @@ Each line ends with its source in `PRODUCT.md`.
 
 - An instance with one owner, households including a test household, and members added by invite; no public sign-up. _Users; Self-hosted, open source; Test household_
 - Passkey sign-in, an app lock with Face ID or Touch ID, and step-up before sensitive actions. _Authentication_
-- Bank connections to the supported banks (BoursoBank, Crédit Agricole Aquitaine, Crédit Mutuel du Sud-Ouest), read-only, each through the account holder's own provider application; Enable Banking is the recommended data provider, pending SP-01 and ADR 0012, and other members import files until it confirms its terms in writing. _Bank sync_
+- Bank connections to the supported banks (BoursoBank, Crédit Agricole Aquitaine, Crédit Mutuel du Sud-Ouest), read-only, through the owner's own provider application with Enable Banking (ADR 0012); other members import bank files. _Bank sync_
 - Import of OFX, QIF and CSV files in every app, the fallback for every bank and every member. _Bank sync_
 - Manual accounts, cash first: manual entries, cash counts, and withdrawals recognized as transfers. _Manual accounts_
 - A personal plan per member and one shared plan with its split. _Plans in a household_
@@ -205,24 +205,23 @@ Each line ends with its source in `PRODUCT.md`.
 - The owner adds people with invites, which are stored hashed, revocable and logged. A signed-in person who redeems an invite gains a membership rather than a second person.
 - A person can be a member of several households and switches between them; data, alerts and pending changes never cross households. The watch, the widgets and the glance follow the household selected on the iPhone.
 - The owner is the only administrative role; households have no admin.
-- Removing a member (owner, step-up) ends the membership, revokes that person's devices for the household, revokes their consents where the data provider allows, and deletes their provider application's key when it was their last membership. Their personal space is deleted after 30 days, during which the owner can undo the removal. Members export their own data before they leave.
+- Removing a member (owner, step-up) ends the membership and revokes that person's devices for the household. Their personal space is deleted after 30 days, during which the owner can undo the removal. Members export their own data before they leave.
 - A test household holds generated fictitious data and takes no bank connection. It shows a permanent banner, on the glance too, and imports only files its generator wrote, which carry a marker.
 - The owner fills a test household from its settings in the owner's administration, with fictitious accounts, 12 months of transactions, recurring items and goals. It is where the owner tries new features; upgrades are rehearsed on a throwaway instance restored from a backup, since migrations are instance-wide.
-- Instance administration (owner only, with step-up): households, invites, memberships, devices, backup status and the instance's audit events. Other members' bank connections appear there only as counts per health state, naming no bank, member or account; each member watches their own connections' health in their own settings. Host commands cover bootstrap, owner recovery, restore, backup verification, diagnostics and secret generation.
+- Instance administration (owner only, with step-up): households, invites, memberships, devices, backup status and the instance's audit events. Host commands cover bootstrap, owner recovery, restore, backup verification, diagnostics and secret generation.
 - A member who lost every passkey gets a single-use recovery link from the owner; the owner recovers through a host command.
 
 ### Bank connections, consent renewal and refresh
 
-- Provider application, once per person: the instance generates the key pair and a long-lived certificate, whose validity SP-01 settles; the person registers an application with the data provider (with Enable Banking, a restricted-mode application) and pastes its ID; the instance checks that it is active, in production, allowed to read accounts and lists the instance's callback. Nobody uploads, downloads or sees the private key.
-- Until the data provider confirms in writing that members' applications may run on an instance the owner administers (SP-01), only the owner's provider application is used; other members import files.
-- Connecting a bank (account holder, step-up): pick a supported bank, give consent with strong customer authentication at the bank (a browser sheet in the native apps, a full-page redirect on the web, never an embedded web view), and come back through `https://app.<domain>/connect/enable-banking/callback`. A "Return to Shoestring" button and polling cover a bank app that doesn't hand back.
+- Provider application, once, for the owner: the instance generates the key pair and a long-lived certificate, whose validity SP-13 records; the owner registers an application with the data provider (with Enable Banking, a restricted-mode application) and pastes its ID; the instance checks that it is active, in production, allowed to read accounts and lists the instance's callback. Nobody uploads, downloads or sees the private key.
+- Only the owner has a provider application; other members import bank files (ADR 0012).
+- Connecting a bank (owner, step-up): pick a supported bank, give consent with strong customer authentication at the bank (a browser sheet in the native apps, a full-page redirect on the web, never an embedded web view), and come back through `https://app.<domain>/connect/enable-banking/callback`. A "Return to Shoestring" button and polling cover a bank app that doesn't hand back.
 - The member then picks which accounts to add and their visibility, private by default. The instance backfills each account's full history at once.
 - A consent lasts the bank's maximum, at most 180 days, minus a margin of one day, counted in UTC.
 - Health: ok, expiring (14 days or less left), needs renewal, bank down or rate-limited, with the time of the last successful refresh.
 - An access is one request to an account's balances or transactions endpoint, each page counted, until SP-13 shows how a bank counts. At most 4 accesses per account in any 24 hours, retries and catch-ups included, and at least 6 hours of back-off after a rate limit.
 - Background refresh: 2 refresh slots per consent per day at jittered times; the first fetches balances and transactions, the second transactions only, each from 7 days before the last booked date, which leaves one access for a retry. A bank gets more slots, or balances in every slot, only once SP-13 has measured how it counts.
 - Explicit refresh: pull-to-refresh or the refresh button fetches at once, only for the consents that member authorized, with their PSU headers and outside the background limit. The backfill right after a consent is user-present too, with the PSU headers of the member's return to the callback; where a bank refuses them (SP-13), it runs within the background limit and may get less than the full history. Opening an app syncs with the instance and may use a refresh slot left that day, without PSU headers. The watch never triggers a refresh.
-- A joint account connected by both holders takes one fetch per slot across both consents.
 - Pending transactions count at once. A booked transaction replaces a pending one when both carry the same bank reference; otherwise the pairing needs the same account and payee, a booked date within 10 days and the same amount, or any amount once the bank stops returning the pending one, as when a card hold books lower. The booked twin keeps the member's choices, and a pending transaction the bank stops returning without a twin is removed.
 - Dedupe works by count, on keys that are never unique. Within one source, a transaction's key is its account, its bank reference (the data provider's entry reference, or a file's FITID) when present, and a fingerprint (date, amount, cleaned label, and the running balance when present), plus its rank among identical keys in the batch; a batch adds only the transactions whose key and rank aren't already there, so two identical payments on one day both stay, and a reference the bank reuses for two transactions keeps both. Across sources, such as a file over a bank connection, the fingerprint without the running balance and the rank decide, and a row that matches only by date and amount goes to the inbox as a suspected duplicate.
 - An amount with more decimals than its currency allows holds its transaction back for review; it is never rounded.
@@ -264,14 +263,14 @@ Each line ends with its source in `PRODUCT.md`.
 2. Within 72 hours, the person opens it, reads that private data is hidden from other members but not from whoever runs the instance, registers a passkey and becomes a member; their personal space, personal plan and cash account are created.
 3. The member sets their regional preferences, opens the web app or installs the native apps, and signs in.
 4. If the household now has two members, the shared plan asks for its split; its next allocation prefills each member's contribution.
-5. The member imports bank files, or sets up their own provider application once the data provider allows it, and decides each account's visibility.
+5. The member imports bank files and decides each account's visibility.
 
 ### Connecting a bank
 
-1. In the bank connections settings, the account holder picks a supported bank, with step-up.
-2. The app opens the bank's consent page; the member passes strong customer authentication, often in the bank's own app.
+1. In the bank connections settings, the owner picks a supported bank, with step-up.
+2. The app opens the bank's consent page; the owner passes strong customer authentication, often in the bank's own app.
 3. The bank returns to the instance's callback; the instance completes the consent, and the app comes back by itself or through "Return to Shoestring".
-4. The member picks accounts and their visibility, private by default.
+4. The owner picks accounts and their visibility, private by default.
 5. The backfill runs, new transactions fill the review inbox, and the connection shows its health and expiry date.
 
 ### The monthly allocation
@@ -491,6 +490,4 @@ Measured in the lab: the iPhone figures with XCTest metrics on a pinned simulato
 
 Each question becomes one GitHub issue labelled `needs-info` once these docs are public; its answer lands as an ADR or a `PRODUCT.md` edit, and the pull request that records it deletes the matching (proposed) markers. Answers that need device or household details stay off GitHub. Repository and tooling questions live in [`docs/factory.md`](docs/factory.md#open-questions).
 
-No maintainer decision is pending. Outside the project:
-
-1. Enable Banking's written answer (SP-01): members' provider applications run by the owner's instance, how many accounts one application may cover, the automation clause, how the 4-a-day limit is counted, and the certificate's validity and replacement.
+No question is pending.
