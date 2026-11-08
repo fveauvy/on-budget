@@ -312,19 +312,21 @@ Each slice ships something the household can use and pulls in only the factory s
    - Adds: `packages/connectors` with the parsers and synthetic golden files; the full test-household generator and the owner's "fill with generated data".
    - Spikes: SP-14, SP-20. *(maintainer)* SP-05's install starts on a throwaway VPS.
    - Done when overlapping exports land once and fill the inbox with category, payee and attribution suggestions.
-3. **Two members and the shared plan.** Invites, visibility, the shared plan and its split, money owed and the net-cost rule.
-   - Spikes: SP-28 *(maintainer)*.
-   - Done when `SPEC.md`'s acceptance criteria for money owed, shared plans and sharing pass in the simulator and in both apps.
+3. **Money owed.** Debts and expected reimbursements, the net-cost rule, settlements and reminders on the iPhone.
+   - Done when `SPEC.md`'s acceptance criteria for money owed pass in the simulator and in both apps.
 4. **The household's instance.** Passkeys, the app lock and step-up; the package, the module and its VM tests; the ops repository and the tailnet host; backups and restore; alerts and reminders by APNs and Web Push; releases and the first TestFlight build.
    - Adds: `packages.default`, `nixosModules.default`, `templates.ops` and the `nix` job; the release App, release-please, `release.yml` and the Cachix cache; the NSE target; *(maintainer)* the app record, household members as App Store Connect users (ADR 0019), Xcode Cloud's repository connection and workflow, and the first internal build (F1).
-   - Spikes: SP-03, SP-04, SP-05, SP-06 *(maintainer)*, SP-10, SP-11, SP-16, SP-21, SP-24, SP-25, SP-26.
+   - Spikes: SP-03, SP-04, SP-05 *(maintainer)*, SP-10, SP-11, SP-16, SP-21, SP-24, SP-25, SP-26.
    - Done when the household uses the tailnet instance from TestFlight builds and the web app, and a restore check passes.
 5. **Bank connections.** The owner's provider application, consent and renewal, refresh slots and the fetch budget, the fake-provider contract kit and the nightly sandbox test. Other members import files.
    - Spikes: SP-12 and SP-13 *(maintainer)*.
    - Done when a week of background refreshes at each supported bank stays within the budget without a rate limit.
 6. **The watch.** The watch target with the read-only glance and one complication family; GlanceBuilder, `GET /api/v1/glance` and WatchRelay.
    - Spikes: the Apple halves of SP-15 and SP-19, SP-17's watch part, SP-22 and SP-31 *(maintainer)*.
-   - Done when the watch shows both plans' figures with the glance's age within `SPEC.md`'s budgets.
+   - Done when the watch shows each plan's figures with the glance's age within `SPEC.md`'s budgets.
+7. **Two members and the shared plan.** Invites, visibility, the shared plan and its split, contributions and member balances, and money owed on shared spending.
+   - Spikes: SP-06 and SP-28 *(maintainer)*.
+   - Done when `SPEC.md`'s acceptance criteria for shared plans and sharing pass in the simulator and in both apps.
 
 After the MVP, and only on evidence: the [deferred tools](#deferred-tools), repo skills beyond the first two, Next's features, and the image and compose bundle once the server is stable (SP-33).
 
