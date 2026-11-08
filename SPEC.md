@@ -165,14 +165,15 @@ Each line ends with its source in `PRODUCT.md`.
 
 ### Money owed, settlement and the net-cost rule
 
-- A debt or an expected reimbursement has a counterparty, an amount, an optional due date, a note and an optional reminder; it is open, partly settled or settled. Money owed lives in its member's personal space.
+- A debt or an expected reimbursement has a counterparty, an amount, an optional due date, a note and an optional reminder; it is open, partly settled or settled. Money owed always belongs to one member and lives in their personal space; the shared plan holds no debt, loan or expected reimbursement.
 - Net-cost rule: when a member pays for someone else, they divide the transaction into shares, by amount, in equal parts or by percentage, summing to the total. The member's own share, the net cost, counts in the category; each counterparty's share becomes an expected reimbursement.
-- Shared-plan payments: for a payment that counts in the shared plan, such as one from a joint account, the shared plan's category counts the household's share, and each counterparty's share becomes an expected reimbursement of the shared plan, kept in the shared space, which every member sees and any member can settle when the payment reaches a joint account. Where a settlement paid into one member's own account goes follows open question 1.
+- Shared-plan payments: for a payment that counts in the shared plan, such as one from a joint account, the shared plan's category counts the household's share. Each counterparty's share becomes an expected reimbursement of the member who divides the payment. When the payment came from a joint account, that member's personal plan advances those shares to the shared plan at once, as a contribution. The settlement clears that member's expected reimbursement wherever it lands, and one paid into a joint account returns the advance to that member.
 - An expected refund from a company, such as health insurance, works the same way: the member marks the expected part when categorizing the payment.
 - An incoming payment whose payee matches a counterparty and whose amount equals one open item, or several together, is suggested as their settlement. Settling an expected reimbursement or a member balance is neither income nor spending.
 - A smaller payment settles part of an item, and a cash settlement is a manual entry on the cash account.
 - When a reimbursement closes below its expected amount, the difference counts in the original category and period.
 - Paying back a debt counts as the member's own spending in a category, and a debt due within the period appears in the forecast.
+- Loans (Next): a loan belongs to one member. Its whole installment is budgeted in a fixed category of that member's plan; reports count the interest as spending and the principal as a debt reduction, which lowers the remaining principal.
 - A reminder notifies the member at its time: as a local notification on their iPhone, offline included, and by Web Push from the instance on their web devices while those are online. An item past its due date shows as overdue. The wording stays neutral: "{counterparty} owes you 12 €".
 
 ### Personal and shared plans and splits
@@ -490,11 +491,6 @@ Measured in the lab: the iPhone figures with XCTest metrics on a pinned simulato
 
 Each question becomes one GitHub issue labelled `needs-info` once these docs are public; its answer lands as an ADR or a `PRODUCT.md` edit, and the pull request that records it deletes the matching (proposed) markers. Answers that need device or household details stay off GitHub. Repository and tooling questions live in [`docs/factory.md`](docs/factory.md#open-questions).
 
-Maintainer decisions still pending:
+No maintainer decision is pending. Outside the project:
 
-1. A friend's settlement of shared-plan spending: where does it go when it reaches one member's own account rather than a joint account (Money owed)?
-2. Loans (Next), from `PRODUCT.md`'s undecided list: how installments split into principal and interest in the plan.
-
-Outside the project:
-
-3. Enable Banking's written answer (SP-01): members' provider applications run by the owner's instance, how many accounts one application may cover, the automation clause, how the 4-a-day limit is counted, and the certificate's validity and replacement.
+1. Enable Banking's written answer (SP-01): members' provider applications run by the owner's instance, how many accounts one application may cover, the automation clause, how the 4-a-day limit is counted, and the certificate's validity and replacement.

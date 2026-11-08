@@ -65,8 +65,8 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Recurring items** are detected and forecast.
 - **Goals**: financial-safety buffer, saving for a big purchase.
 - **Manual accounts**, cash first: members record cash spending when they think of it and recount from time to time, the gap becoming spending to categorize. Cash withdrawals are recognized as transfers from the bank account to the cash account.
-- **Money owed, both ways**: debts to friends or companies and expected reimbursements from them, each with an amount, an optional due date, a note and a reminder. When a member pays for someone else, the category counts only the member's share; the rest becomes an expected reimbursement, settled when the matching payment arrives.
-- **Loans** with a schedule (remaining principal, installments, interest), just after the MVP; until then, installments are recurring items.
+- **Money owed, both ways**: debts to friends or companies and expected reimbursements from them, each with an amount, an optional due date, a note and a reminder. When a member pays for someone else, the category counts only the member's share; the rest becomes an expected reimbursement, settled when the matching payment arrives. Money owed always belongs to one member; on shared spending, friends owe the member who divides the payment.
+- **Loans** with a schedule (remaining principal, installments, interest), just after the MVP; until then, installments are recurring items. Each loan belongs to one member; reports count its interest as spending and its principal as debt reduction.
 - **Plans in a household**: each member has a personal plan, and a shared plan covers shared spending and any joint account. Each shared plan sets how its spending splits between members: 50/50, a fixed percentage, or in proportion to income.
 - **Configurable sharing**: each person decides which accounts and budgets are private or shared with their household.
 - **Offline-first** on every app; sync through the instance's API and database on reconnect; concurrent edits merge predictably.
@@ -77,7 +77,7 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Regional settings** for any European country: date and time formats, 12- or 24-hour clock, time zones, currencies, number formatting, and other locale-sensitive data.
 - **Currencies**: one base currency per household for now.
 - **Native app distribution**: the maintainer's household installs the native apps through the maintainer's TestFlight; other self-hosters use their instance's web app or build the native apps with their own Apple developer account. No App Store listing and no push relay.
-- **Undecided**: how loan installments enter the plan (principal vs. interest); the bank provider: Enable Banking is recommended, pending its written terms (SP-01); where a friend's settlement of shared-plan spending goes.
+- **Undecided**: the bank provider: Enable Banking is recommended, pending its written terms (SP-01).
 
 ## Brand Commitments
 

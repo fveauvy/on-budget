@@ -312,7 +312,7 @@ Each slice ships something the household can use and pulls in only the factory s
    - Adds: `packages/connectors` with the parsers and synthetic golden files; the full test-household generator and the owner's "fill with generated data".
    - Spikes: SP-14, SP-20. *(maintainer)* SP-05's install starts on a throwaway VPS.
    - Done when overlapping exports land once and fill the inbox with category, payee and attribution suggestions.
-3. **Two members and the shared plan.** Invites, visibility, the shared plan and its split, money owed and the net-cost rule. Where a friend's settlement reaching one member's own account goes waits for `SPEC.md` open question 1.
+3. **Two members and the shared plan.** Invites, visibility, the shared plan and its split, money owed and the net-cost rule.
    - Spikes: SP-28 *(maintainer)*.
    - Done when `SPEC.md`'s acceptance criteria for money owed, shared plans and sharing pass in the simulator and in both apps.
 4. **The household's instance.** Passkeys, the app lock and step-up; the package, the module and its VM tests; the ops repository and the tailnet host; backups and restore; alerts and reminders by APNs and Web Push; releases and the first TestFlight build.

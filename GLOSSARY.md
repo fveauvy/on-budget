@@ -259,7 +259,7 @@ One member's or counterparty's portion of an amount under a split or a net-cost 
 _Avoid_: portion, part, quote-part
 
 **Contribution**:
-Money a member gives a shared plan for a period, as its split asks, usually by a transfer into a joint account.
+Money a member gives a shared plan for a period, as its split asks or to advance a counterparty's share, usually by a transfer into a joint account.
 _Avoid_: deposit, top-up, funding transfer
 
 **Shared entry**:
@@ -297,7 +297,7 @@ One scheduled payment of a loan, made of principal and interest.
 _Avoid_: monthly payment, mensualité
 
 **Expected reimbursement**:
-Money a counterparty owes a member, or the shared plan, such as a friend's share of a bill or a refund a company owes.
+Money a counterparty owes a member, such as a friend's share of a bill or a refund a company owes.
 _Avoid_: receivable, IOU, expected refund
 
 **Incoming payment**:
