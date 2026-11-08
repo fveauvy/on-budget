@@ -43,7 +43,7 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - Each month, as income arrives: give every euro a role (fixed charges, discretionary spending, goals).
 - Planning and settings on a big screen: the Mac app or the web app on any computer.
 - Two people may edit the same shared budget, sometimes offline, each on several devices.
-- Each person connects their own banks with their own bank-data provider credentials, or imports bank files. Every app keeps working offline and syncs on reconnect.
+- The owner connects their own banks through their own Enable Banking application; other members import bank files. Every app keeps working offline and syncs on reconnect.
 - The owner administers the instance: households (for example a test household and a production household), members, bank connections, backups and upgrades.
 
 ## Capabilities and Constraints
@@ -54,7 +54,7 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Private network friendly**: every feature works when the instance is reachable only over a private network such as Tailscale; nothing requires inbound connections from the internet.
 - **Data protection**: each instance relies on the GDPR household exemption, so the apps have no consent step for data processing and no processing notice; self-hosters who use Shoestring beyond their household handle their own compliance.
 - **Test household**: the owner can fill a household with generated fictitious data, without bank connections, to try new features. Upgrades are rehearsed on a throwaway instance restored from a backup.
-- **Bank sync**: first supported banks are BoursoBank, Crédit Agricole Aquitaine and Crédit Mutuel du Sud-Ouest (Arkéa group). Read-only: transaction history is all the product needs. Each person connects their own accounts; file import is the fallback. Must be secure and stable. Provider: undecided.
+- **Bank sync**: first supported banks are BoursoBank, Crédit Agricole Aquitaine and Crédit Mutuel du Sud-Ouest (Arkéa group). Read-only: transaction history is all the product needs. The owner connects their own accounts through Enable Banking (ADR 0012); other members, and banks it can't read, use file import. Must be secure and stable.
 - **Budget engine**, all four confirmed by the owner:
   - plans run on calendar months;
   - zero-based allocation: every euro gets a role;
@@ -65,8 +65,8 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Recurring items** are detected and forecast.
 - **Goals**: financial-safety buffer, saving for a big purchase.
 - **Manual accounts**, cash first: members record cash spending when they think of it and recount from time to time, the gap becoming spending to categorize. Cash withdrawals are recognized as transfers from the bank account to the cash account.
-- **Money owed, both ways**: debts to friends or companies and expected reimbursements from them, each with an amount, an optional due date, a note and a reminder. When a member pays for someone else, the category counts only the member's share; the rest becomes an expected reimbursement, settled when the matching payment arrives.
-- **Loans** with a schedule (remaining principal, installments, interest), just after the MVP; until then, installments are recurring items.
+- **Money owed, both ways**: debts to friends or companies and expected reimbursements from them, each with an amount, an optional due date, a note and a reminder. When a member pays for someone else, the category counts only the member's share; the rest becomes an expected reimbursement, settled when the matching payment arrives. Money owed always belongs to one member; on shared spending, friends owe the member who divides the payment.
+- **Loans** with a schedule (remaining principal, installments, interest), just after the MVP; until then, installments are recurring items. Each loan belongs to one member; reports count its interest as spending and its principal as debt reduction.
 - **Plans in a household**: each member has a personal plan, and a shared plan covers shared spending and any joint account. Each shared plan sets how its spending splits between members: 50/50, a fixed percentage, or in proportion to income.
 - **Configurable sharing**: each person decides which accounts and budgets are private or shared with their household.
 - **Offline-first** on every app; sync through the instance's API and database on reconnect; concurrent edits merge predictably.
@@ -77,7 +77,6 @@ An open-source, self-hosted product across iPhone, Apple Watch, Mac and the web 
 - **Regional settings** for any European country: date and time formats, 12- or 24-hour clock, time zones, currencies, number formatting, and other locale-sensitive data.
 - **Currencies**: one base currency per household for now.
 - **Native app distribution**: the maintainer's household installs the native apps through the maintainer's TestFlight; other self-hosters use their instance's web app or build the native apps with their own Apple developer account. No App Store listing and no push relay.
-- **Undecided**: how loan installments enter the plan (principal vs. interest); the bank provider: Enable Banking is recommended, pending its written terms (SP-01); where a friend's settlement of shared-plan spending goes.
 
 ## Brand Commitments
 

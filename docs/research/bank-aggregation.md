@@ -1,6 +1,6 @@
 # Bank data access for French banks
 
-> **Status (2026-11-08).** Background research. The ADRs, `SPEC.md`, [`docs/factory.md`](../factory.md) and [`docs/architecture.md`](../architecture.md#references) win where this note disagrees. It uses on-budget, the working name, for what is now Shoestring ([ADR 0020](../adr/0020-shoestring-as-the-product-name.md)). Superseded or amended here: Foreground refresh; device-only parsing; watched folder; §7.2's controller advice, superseded by the household exemption.
+> **Status (2026-11-08).** Background research. The ADRs, `SPEC.md`, [`docs/factory.md`](../factory.md) and [`docs/architecture.md`](../architecture.md#references) win where this note disagrees. It uses on-budget, the working name, for what is now Shoestring ([ADR 0020](../adr/0020-shoestring-as-the-product-name.md)). Superseded or amended here: Foreground refresh; device-only parsing; watched folder; §7.2's controller advice, superseded by the household exemption; per-person provider applications.
 
 Research date: 2026-11-07, revised the same day after a fact-check and to match the current `PRODUCT.md`
 (self-hosted model, private-network instances, first supported banks). Prices, limits and signup status are as

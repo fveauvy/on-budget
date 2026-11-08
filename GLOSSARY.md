@@ -73,7 +73,7 @@ A place where money is tracked: a bank account fed by a bank connection or by im
 _Avoid_: wallet, pot
 
 **Account holder**:
-The member in whose name an account is held, or every member of a joint account; only holders connect, renew or remove its bank connection.
+The member in whose name an account is held, or every member of a joint account.
 _Avoid_: owner (reserved for the instance owner), titulaire
 
 **Joint account**:
@@ -259,7 +259,7 @@ One member's or counterparty's portion of an amount under a split or a net-cost 
 _Avoid_: portion, part, quote-part
 
 **Contribution**:
-Money a member gives a shared plan for a period, as its split asks, usually by a transfer into a joint account.
+Money a member gives a shared plan for a period, as its split asks or to advance a counterparty's share, usually by a transfer into a joint account.
 _Avoid_: deposit, top-up, funding transfer
 
 **Shared entry**:
@@ -297,7 +297,7 @@ One scheduled payment of a loan, made of principal and interest.
 _Avoid_: monthly payment, mensualité
 
 **Expected reimbursement**:
-Money a counterparty owes a member, or the shared plan, such as a friend's share of a bill or a refund a company owes.
+Money a counterparty owes a member, such as a friend's share of a bill or a refund a company owes.
 _Avoid_: receivable, IOU, expected refund
 
 **Incoming payment**:
@@ -315,19 +315,19 @@ _Avoid_: repayment, payback
 ## Bank data
 
 **Bank connection**:
-A member's link between one supported bank and Shoestring through their provider application: one consent, the accounts it covers, and its health (ok, expiring, needs renewal, bank down, rate-limited).
+The owner's link between one supported bank and Shoestring through their provider application: one consent, the accounts it covers, and its health (ok, expiring, needs renewal, bank down, rate-limited).
 _Avoid_: link, integration, item, bank sync
 
 **Data provider**:
-The licensed account-information company that reads bank data on a member's behalf, such as Enable Banking.
+The licensed account-information company that reads bank data on the owner's behalf, such as Enable Banking.
 _Avoid_: aggregator, AISP (outside legal text), bank API
 
 **Provider application**:
-A person's own application registered with the data provider, whose key the instance generates and keeps; one per person, never one per instance.
+The owner's own application registered with the data provider, whose key the instance generates and keeps.
 _Avoid_: provider app, API key, credentials, client
 
 **Consent**:
-A member's authorization, given at their bank with strong customer authentication, that lets the data provider read the covered accounts until it expires, usually after 180 days.
+The owner's authorization, given at their bank with strong customer authentication, that lets the data provider read the covered accounts until it expires, usually after 180 days.
 _Avoid_: session, mandate, authorization (in UI copy)
 
 **Renewal**:
