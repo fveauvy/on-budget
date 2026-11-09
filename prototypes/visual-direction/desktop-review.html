@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>PROTOTYPE · Desktop · Revue</title>
+<script>document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kit.css">
+<style>
+.desk{grid-template-columns:240px 1fr 440px}
+.mid{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line);position:relative}
+.bar .cnt{color:var(--tx-2)}
+.sug{margin:16px 20px 4px;display:flex;align-items:center;gap:14px;padding:12px 14px}
+.sug p{flex:1}
+.ghead{display:flex;align-items:center;gap:8px;height:36px;margin-top:12px;padding:0 20px;color:var(--tx-2);font-weight:600}
+.rows{margin:0 12px;background:var(--s-1);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.tx{display:grid;grid-template-columns:16px 150px 170px 1fr 80px 56px 76px;align-items:center;gap:12px;height:46px;padding:0 14px}
+.tx+.tx{border-top:1px solid var(--line)}
+.tx.sel{background:var(--acc-soft);box-shadow:inset 0 0 0 1px var(--acc-line)}
+.tx .m{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tx .env{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.tx .eff{font-weight:600;white-space:nowrap}
+.tx .ac,.tx .dt{color:var(--tx-2)}
+.tx .am{text-align:right;font-weight:600}
+.toast{position:absolute;left:50%;bottom:52px;transform:translateX(-50%)}
+.hint{margin-top:auto;height:38px;display:flex;align-items:center;gap:16px;padding:0 20px;border-top:1px solid var(--line);color:var(--tx-2)}
+.hint span{display:flex;align-items:center;gap:6px}
+.ph{height:52px;display:flex;align-items:center;gap:8px;padding:0 22px;border-bottom:1px solid var(--line);color:var(--tx-2)}
+.pb{padding:24px 26px}
+.pb h2{font:var(--d-title)}
+.amt{font:var(--d-amount);letter-spacing:-.02em;margin:8px 0 18px}
+.props{display:grid;grid-template-columns:136px 1fr;row-gap:14px;align-items:center}
+.props dt{color:var(--tx-2)}
+.props dd{display:flex;align-items:center;gap:8px;font-weight:500}
+.eff2 s{color:var(--tx-2)}
+.acts{margin-top:24px}
+.act{display:flex;align-items:center;gap:10px;height:42px;padding:0 14px;font-weight:600}
+.act.p{background:var(--acc);color:var(--on-acc)}
+.act.p kbd{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);color:var(--on-acc)}
+.act kbd{margin-left:auto}
+.why{margin-top:18px;color:var(--tx-2);line-height:1.55}
+</style></head>
+<body><div class="desk">
+<aside class="side">
+ <div class="ws"><span class="av">S</span>Mon foyer</div>
+ <div class="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>Rechercher<kbd>⌘K</kbd></div>
+ <nav class="nav">
+  <a><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 12V3.5A8.5 8.5 0 0 1 20.5 12Z"/></svg>Aujourd’hui</a>
+  <a class="on"><svg class="i" viewBox="0 0 24 24"><path d="M3 13l2.6-7.2h12.8L21 13v5.2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M3 13h5l1.6 2.6h4.8L16 13h5"/></svg>Revue<b>5</b></a>
+  <a><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg>Plan</a>
+  <a><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/></svg>Comptes</a>
+ </nav>
+ <div class="nsec">Enveloppes · novembre</div>
+ <nav class="nav">
+  <a><span class="er sm c-bad" style="--p:74"><i>🍽️</i></span>Restaurants et cafés<b class="bad">+6 j</b></a>
+  <a><span class="er sm c-warn" style="--p:68"><i>📦</i></span>Divers<b class="warn">+4 j</b></a>
+  <a><span class="er sm c-warn" style="--p:63"><i>🛒</i></span>Courses<b class="warn">+3 j</b></a>
+  <a><span class="er sm c-ok" style="--p:37"><i>🎟️</i></span>Loisirs<b class="ok">−5 j</b></a>
+  <a><span class="er sm c-ok" style="--p:35"><i>🚆</i></span>Transports<b class="ok">−5 j</b></a>
+ </nav>
+ <div class="nsec">Objectifs</div>
+ <nav class="nav"><a><span class="er sm c-goal" style="--p:42"><i>🛟</i></span>Matelas de sécurité<b>42 %</b></a><a><span class="er sm c-goal" style="--p:18"><i>🚲</i></span>Vélo cargo<b>18 %</b></a></nav>
+</aside>
+<section class="mid">
+ <div class="bar"><h1>Revue</h1><span class="cnt">5</span><span class="chip">Tous les comptes</span><span class="chip">Suggestions</span><div class="r"><span class="chip">Affichage</span></div></div>
+ <div class="sug"><div class="k"><svg viewBox="0 0 16 16"><path d="M6.5 9.5l3-3M5.2 7.3 3.8 8.7a2.2 2.2 0 0 0 3.1 3.1l1.4-1.4M10.8 8.7l1.4-1.4a2.2 2.2 0 0 0-3.1-3.1L7.7 5.6"/></svg>Suggestion</div><p>Le virement de Camille, +25,00 €, solde « Camille te doit 25 € ».</p><span class="btn q">Ignorer</span><span class="btn p">Approuver <kbd>↵</kbd></span></div>
+ <div class="ghead"><span class="todo"></span>À revoir <span style="color:var(--tx-3)">4</span></div>
+ <div class="rows">
+  <div class="tx row-h"><span class="todo"></span><span class="m">Boulangerie Paul</span><span class="env"><span class="er sm c-warn" style="--p:63"><i>🛒</i></span>Courses</span><span class="eff warn">reste à +3 j</span><span class="ac">Carte</span><span class="dt">17 nov.</span><span class="am">−4,60 €</span></div>
+  <div class="tx row-h hover"><span class="todo"></span><span class="m">SNCF Connect</span><span class="env"><span class="er sm c-ok" style="--p:35"><i>🚆</i></span>Transports</span><span class="eff warn">−5 j → +9 j</span><span class="ac">Carte</span><span class="dt">16 nov.</span><span class="am">−38,00 €</span></div>
+  <div class="tx row-h"><span class="todo"></span><span class="m">Carrefour City</span><span class="env"><span class="er sm c-warn" style="--p:63"><i>🛒</i></span>Courses</span><span class="eff warn">+3 j → +5 j</span><span class="ac">Carte</span><span class="dt">16 nov.</span><span class="am">−23,47 €</span></div>
+  <div class="tx sel"><span class="todo"></span><span class="m">Le Comptoir du Marché</span><span class="env"><span class="er sm c-bad" style="--p:74"><i>🍽️</i></span>Restaurants et cafés</span><span class="eff bad">+6 j → +9 j</span><span class="ac">Carte</span><span class="dt">15 nov.</span><span class="am">−9,50 €</span></div>
+ </div>
+ <div class="toast">Pharmacie du Centre rangée dans Divers <b>Annuler</b><kbd>⌘Z</kbd></div>
+ <div class="hint"><span><kbd>J</kbd><kbd>K</kbd>naviguer</span><span><kbd>1</kbd>accepter</span><span><kbd>2</kbd>autre enveloppe</span><span><kbd>⌘K</kbd>commandes</span></div>
+</section>
+<section>
+ <div class="ph"><span class="todo"></span>À revoir · 4 sur 4</div>
+ <div class="pb">
+  <h2>Le Comptoir du Marché</h2>
+  <div class="amt">−9,50 €</div>
+  <dl class="props">
+   <dt>Date</dt><dd>dimanche 15 novembre, 10:20</dd>
+   <dt>Compte</dt><dd>Carte</dd>
+   <dt>Enveloppe</dt><dd><span class="er sm c-bad" style="--p:74"><i>🍽️</i></span>Restaurants et cafés<span class="tag">suggestion</span></dd>
+   <dt>Effet sur le rythme</dt><dd class="eff2"><s>+6 j</s>→<b class="bad">+9 j</b></dd>
+   <dt>Reste</dt><dd>31 € → 21,50 € sur 120 €</dd>
+  </dl>
+  <div class="list acts">
+   <div class="act p">Accepter « Restaurants et cafés »<kbd>1</kbd></div>
+   <div class="act">Choisir une autre enveloppe<kbd>2</kbd></div>
+   <div class="act">Diviser la transaction<kbd>3</kbd></div>
+   <div class="act">C’est un virement<kbd>T</kbd></div>
+   <div class="act">Passer pour l’instant<kbd>S</kbd></div>
+  </div>
+  <p class="why">Suggestion d’après 12 paiements chez ce marchand. Restaurants et cafés est déjà l’enveloppe la plus rapide du mois.</p>
+ </div>
+</section>
+</div></body></html>

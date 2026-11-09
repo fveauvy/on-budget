@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>PROTOTYPE · États</title>
+<script>document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kit.css">
+<style>
+body{width:1280px;height:560px;overflow:hidden;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:28px}
+.st{display:flex;flex-direction:column;gap:12px}
+.st h2{font:600 13px/18px var(--font);color:var(--tx-2)}
+.card{padding:18px;flex:1;position:relative;overflow:hidden}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.done{width:56px;height:56px;border-radius:50%;background:color-mix(in srgb,var(--ok) 14%,transparent);display:grid;place-items:center}
+.done svg{width:26px;height:26px;fill:none;stroke:var(--ok-tx);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.empty b{font:var(--ios-head)}.empty p{font:var(--ios-sub);color:var(--tx-2);max-width:220px}
+.empty a{color:var(--acc-tx);font:var(--ios-sub);margin-top:4px}
+.off{display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:16px;background:var(--s-2);font:500 13px/1 var(--font);color:var(--tx-2);width:max-content}
+.off svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.stale .w{display:flex;align-items:center;gap:8px;font:700 24px/30px var(--font);color:var(--tx-2);margin-top:16px}
+.stale p{font:var(--ios-sub);color:var(--tx-2);margin-top:4px}
+.stale .ln{height:110px;margin-top:16px;border-radius:12px;background:repeating-linear-gradient(90deg,var(--s-2) 0 1px,transparent 1px 28px);opacity:.8;position:relative}
+.stale .ln:after{content:"";position:absolute;left:8%;right:40%;bottom:18px;height:2px;background:var(--tx-3);transform:rotate(-14deg);transform-origin:left}
+.sk{display:grid;grid-template-columns:16px 1fr 60px;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.sk:first-of-type{border-top:0}
+.sk i{display:block;height:12px;border-radius:6px;background:var(--s-2)}
+.sk i.c{width:16px;height:16px;border-radius:50%}
+.sk i.l{width:80%}.sk i.s{width:100%}
+.mask .big{font:700 28px/34px var(--font);letter-spacing:.06em;margin-top:6px}
+.mask p{font:var(--ios-sub);color:var(--tx-2)}
+.mask .tg{display:flex;align-items:center;gap:8px;margin-top:18px;font:500 13px/1 var(--font);color:var(--tx-2)}
+.sw{width:42px;height:26px;border-radius:13px;background:var(--acc);position:relative}.sw:after{content:"";position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff}
+</style></head>
+<body>
+<div class="st"><h2>Revue vide</h2><div class="card empty"><span class="done"><svg viewBox="0 0 26 26"><path d="M6 13.5l4.5 4.3L20 8.5"/></svg></span><b>Tout est revu</b><p>Les nouvelles transactions arriveront avec la prochaine synchronisation, vers 18 h.</p><a>Voir les transactions revues</a></div></div>
+<div class="st"><h2>Hors ligne, données anciennes</h2><div class="card stale"><span class="off"><svg viewBox="0 0 16 16"><path d="M2 2l12 12M5.5 8.6a4 4 0 0 1 5-.3M3 6.2a7.5 7.5 0 0 1 4-1.7M13 6.2a7.6 7.6 0 0 0-2.3-1.3M8 12h.01"/></svg>Hors ligne · données d’il y a 3 h</span><div class="w"><span class="dot" style="--c:var(--tx-3)"></span>Un peu vite</div><p>Le verdict sera recalculé à la reconnexion.</p><div class="ln"></div></div></div>
+<div class="st"><h2>Chargement</h2><div class="card"><div class="sk"><i class="c"></i><i class="l"></i><i class="s"></i></div><div class="sk"><i class="c"></i><i class="s"></i><i class="s"></i></div><div class="sk"><i class="c"></i><i class="l"></i><i class="s"></i></div><div class="sk"><i class="c"></i><i class="s"></i><i class="s"></i></div></div></div>
+<div class="st"><h2>Montants masqués</h2><div class="card mask"><p>Pour aujourd’hui</p><div class="big">•••• €</div><p style="margin-top:14px">Le rythme reste visible : <b class="warn">+2 j</b></p><div class="tg"><span class="sw"></span>Masquer les montants</div></div></div>
+</body></html>

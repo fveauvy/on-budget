@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Horaire de passage</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,600..900&display=block">
+<style>
+:root{
+  --ink:#111111;--paper:#FFFFFF;--jaune:#FFD60A;--rouge:#D7262E;--vert:#2E9E4F;
+  --mute:#5C5C5C;--quiet:#767676;--rule:#E3E3E3;--hill:#E6E6E6;--chip:#F0F0F0;
+  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;
+  --disp:"Archivo",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:390px;height:844px;overflow:hidden;background:var(--paper)}
+body{color:var(--ink);font:15px/20px var(--ui);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+::selection{background:var(--jaune);color:var(--ink)}
+.ph{position:relative;width:390px;height:844px;overflow:hidden;background:var(--paper)}
+.d{font-family:var(--disp);font-stretch:62%;font-weight:800;font-variant-numeric:tabular-nums lining-nums}
+
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:4px 26px 0 38px}
+.sb b{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.sb span{display:flex;gap:6px;align-items:center}
+
+.nav{position:relative;height:44px;display:flex;align-items:center;justify-content:flex-end;padding:0 16px}
+.tt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tt b{font-size:17px;line-height:20px;font-weight:600}
+.tt small{font-size:12px;line-height:15px;color:var(--mute)}
+.cap{position:relative;height:36px;padding:0 14px;border-radius:18px;background:var(--chip);font-size:15px;font-weight:600;line-height:36px}
+
+.band{display:flex;height:64px;margin:8px 16px 0}
+.band .v{flex:1;background:var(--ink);color:#fff;font-size:46px;line-height:64px;padding-left:16px;text-transform:uppercase;letter-spacing:.01em}
+.band .g{background:var(--jaune);font-size:42px;line-height:64px;padding:0 16px 0 28px;margin-left:-14px;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%)}
+.ex{margin:8px 16px 0;color:var(--mute)}
+.ex b{color:var(--ink);font-weight:600}
+
+.amt{margin:14px 16px 0}
+.amt div{font-size:40px;line-height:44px}
+.amt div+div{font-size:24px;line-height:30px}
+.amt span{color:var(--quiet);font-weight:700}
+
+.pf{display:block;margin:10px 16px 0;overflow:visible}
+.pf text{font:11px var(--ui);fill:var(--mute)}
+.pf .k{font:800 22px var(--disp);font-stretch:62%;fill:var(--ink)}
+
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin:10px 16px 2px}
+.sh h2{margin:0;font-size:20px;line-height:26px;font-weight:700;letter-spacing:-.01em}
+.sh span{font-size:13px;color:var(--mute)}
+.row{position:relative;height:48px;margin:0 16px;display:flex;align-items:center;justify-content:space-between}
+.row div{font-size:16px;line-height:19px}
+.row small{display:block;font-size:13px;line-height:16px;color:var(--mute)}
+.row .d{font-size:26px;line-height:30px}
+.tr{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule)}
+.tr i{position:absolute;top:-1px;height:3px;background:var(--ink)}
+.tr::after{content:"";position:absolute;left:53.33%;top:-4px;width:1px;height:9px;background:var(--ink)}
+.r{color:var(--rouge)} .tr i.r{background:var(--rouge)}
+.gr{color:var(--vert)} .tr i.gr{background:var(--vert)}
+
+.tab{position:absolute;left:16px;right:16px;bottom:25px;height:62px;border-radius:31px;padding:4px;display:flex;
+  background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);
+  box-shadow:0 8px 24px rgba(0,0,0,.10),0 0 0 .5px rgba(0,0,0,.10)}
+.tab a{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-radius:27px;font-size:10px;line-height:12px;font-weight:600;color:#6B6B6B}
+.tab a.on{background:#EDEDED;color:var(--ink)}
+.tab svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.bdg{position:absolute;top:2px;left:50%;margin-left:5px;min-width:18px;height:18px;border-radius:9px;background:var(--ink);color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center}
+.hi{position:absolute;bottom:8px;left:128px;width:134px;height:5px;border-radius:3px;background:var(--ink)}
+</style>
+</head>
+<body>
+<div class="ph">
+  <div class="sb"><b>9:41</b><span>
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#111"><rect y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" width="3" height="12" rx="1"/></svg>
+    <svg width="17" height="12" viewBox="0 0 17 12" fill="none" stroke="#111" stroke-width="1.75" stroke-linecap="round"><path d="M1.4 4.4a10.2 10.2 0 0 1 14.2 0M4.3 7.3a6 6 0 0 1 8.4 0"/><circle cx="8.5" cy="10.1" r="1.2" fill="#111" stroke="none"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".9" y=".9" width="22.4" height="11.2" rx="3.3" fill="none" stroke="#111" stroke-opacity=".4" stroke-width="1.75"/><rect x="3" y="3" width="17" height="7" rx="1.6" fill="#111"/><path d="M25.4 4.7v3.6" stroke="#111" stroke-opacity=".4" stroke-width="1.75" stroke-linecap="round"/></svg>
+  </span></div>
+
+  <div class="nav"><div class="tt"><b>Aujourd’hui</b><small>mardi 17 novembre</small></div><span class="cap">5 à revoir</span></div>
+
+  <div class="band d"><div class="v">Un peu vite</div><div class="g">+2&nbsp;j</div></div>
+  <p class="ex">Vous avez déjà dépensé ce que le plan accorde jusqu’au 19&#8239;: <b>37&nbsp;€ au-dessus</b> du rythme prévu.</p>
+
+  <div class="amt d"><div>18&nbsp;€ <span>aujourd’hui</span></div><div>252&nbsp;€ <span>jusqu’au 30 novembre, sur 620&nbsp;€</span></div></div>
+
+  <svg class="pf" width="358" height="150" viewBox="0 0 358 150" role="img" aria-label="Le mois en profil d’étape : vos dépenses cumulées passent au-dessus de l’horaire prévu, 2 jours d’avance">
+    <defs><path id="ok" d="M0 128 11.9 125.7 23.9 116.8 35.8 115.2 47.7 112.5 59.7 107.9 71.6 102.6 83.5 97 95.5 95.5 107.4 94.1 119.3 86.6 131.3 84.3 143.2 81.5 155.1 75.5 167.1 68.2 179 63 190.9 56.8V128Z"/><clipPath id="couru"><use href="#ok"/></clipPath></defs>
+    <path d="M190.9 56.8 358 8V128H190.9Z" style="fill:var(--hill)"/>
+    <use href="#ok" fill="#111"/>
+    <path d="M0 128.5H358" stroke="#111" stroke-width="1"/>
+    <path d="M-.5 131H358.5" stroke="#111" stroke-width="5" stroke-dasharray="1 10.9333"/>
+    <text x="274" y="121" text-anchor="middle">14 jours restants</text>
+    <path d="M0 128 358 8" stroke="#111" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="0 4.5" fill="none"/>
+    <path d="M0 128 358 8" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="0 4.5" fill="none" clip-path="url(#couru)"/>
+    <path d="M357 4V128" stroke="#111" stroke-width="2"/>
+    <path d="M198 56.8H212.5M212.5 51.5V62" stroke="#111" stroke-width="2"/>
+    <circle cx="190.9" cy="56.8" r="6.5" fill="#FFD60A" stroke="#111" stroke-width="2"/>
+    <text class="k" x="205" y="41" text-anchor="middle">+2&nbsp;j</text>
+    <text x="0" y="147">1 nov.</text><text x="190.9" y="147" text-anchor="middle">aujourd’hui</text><text x="358" y="147" text-anchor="end">30 nov.</text>
+  </svg>
+
+  <div class="sh"><h2>Catégories flexibles</h2><span>53&#8239;% du mois écoulé</span></div>
+  <div class="row"><div>Restaurants et cafés<small>31&nbsp;€ restants sur 120&nbsp;€</small></div><b class="d r">+6&nbsp;j</b><span class="tr"><i class="r" style="left:53.33%;width:20.84%"></i></span></div>
+  <div class="row"><div>Divers<small>13&nbsp;€ restants sur 40&nbsp;€</small></div><b class="d">+4&nbsp;j</b><span class="tr"><i style="left:53.33%;width:14.17%"></i></span></div>
+  <div class="row"><div>Courses<small>118&nbsp;€ restants sur 320&nbsp;€</small></div><b class="d">+3&nbsp;j</b><span class="tr"><i style="left:53.33%;width:9.79%"></i></span></div>
+  <div class="row"><div>Loisirs<small>38&nbsp;€ restants sur 60&nbsp;€</small></div><b class="d gr">−5&nbsp;j</b><span class="tr"><i class="gr" style="left:36.67%;width:16.66%"></i></span></div>
+  <div class="row"><div>Transports<small>52&nbsp;€ restants sur 80&nbsp;€</small></div><b class="d gr">−5&nbsp;j</b><span class="tr"><i class="gr" style="left:35%;width:18.33%"></i></span></div>
+
+  <nav class="tab">
+    <a class="on"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="5"/><path d="M14 3.5V6M14 22v2.5M3.5 14H6M22 14h2.5M6.6 6.6l1.8 1.8M19.6 19.6l1.8 1.8M6.6 21.4l1.8-1.8M19.6 8.4l1.8-1.8"/></svg>Aujourd’hui</a>
+    <a><svg viewBox="0 0 28 28"><path d="M4.5 15.5 7.6 7h12.8l3.1 8.5V21a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 21Z"/><path d="M4.5 15.5H10l1.5 2.5h5l1.5-2.5h5.5"/></svg>Revue<span class="bdg">5</span></a>
+    <a><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="9.5"/><path d="M14 4.5V14h9.5"/></svg>Plan</a>
+    <a><svg viewBox="0 0 28 28"><rect x="3.5" y="7" width="21" height="14" rx="2.5"/><path d="M3.5 11.5h21M7.5 17h5"/></svg>Comptes</a>
+  </nav>
+  <div class="hi"></div>
+</div>
+</body>
+</html>

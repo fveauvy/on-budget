@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T12:00:00Z",
+  "title": "Design System: Shoestring",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Cycle Violet",
+        "tonalRamp": [
+          "oklch(15% 0.086 285)",
+          "oklch(26% 0.133 285)",
+          "oklch(38% 0.171 285)",
+          "oklch(50% 0.19 285)",
+          "oklch(62% 0.18 285)",
+          "oklch(74% 0.143 285)",
+          "oklch(86% 0.086 285)",
+          "oklch(95% 0.034 285)"
+        ]
+      },
+      "accent-text": {
+        "role": "primary",
+        "displayName": "Violet Ink"
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Violet Wash"
+      },
+      "accent-line": {
+        "role": "primary",
+        "displayName": "Violet Rule"
+      },
+      "goal": {
+        "role": "secondary",
+        "displayName": "Lagoon Teal",
+        "tonalRamp": [
+          "oklch(15% 0.05 210)",
+          "oklch(26% 0.077 210)",
+          "oklch(38% 0.099 210)",
+          "oklch(50% 0.11 210)",
+          "oklch(62% 0.104 210)",
+          "oklch(74% 0.083 210)",
+          "oklch(86% 0.05 210)",
+          "oklch(95% 0.02 210)"
+        ]
+      },
+      "health-ok": {
+        "role": "health",
+        "displayName": "Margin Green",
+        "tonalRamp": [
+          "oklch(15% 0.063 158)",
+          "oklch(26% 0.098 158)",
+          "oklch(38% 0.126 158)",
+          "oklch(50% 0.14 158)",
+          "oklch(62% 0.133 158)",
+          "oklch(74% 0.105 158)",
+          "oklch(86% 0.063 158)",
+          "oklch(95% 0.025 158)"
+        ]
+      },
+      "health-warn": {
+        "role": "health",
+        "displayName": "Brisk Amber",
+        "tonalRamp": [
+          "oklch(15% 0.068 70)",
+          "oklch(26% 0.105 70)",
+          "oklch(38% 0.135 70)",
+          "oklch(50% 0.15 70)",
+          "oklch(62% 0.142 70)",
+          "oklch(74% 0.112 70)",
+          "oklch(86% 0.068 70)",
+          "oklch(95% 0.027 70)"
+        ]
+      },
+      "health-bad": {
+        "role": "health",
+        "displayName": "Overrun Red",
+        "tonalRamp": [
+          "oklch(15% 0.086 25)",
+          "oklch(26% 0.133 25)",
+          "oklch(38% 0.171 25)",
+          "oklch(50% 0.19 25)",
+          "oklch(62% 0.18 25)",
+          "oklch(74% 0.143 25)",
+          "oklch(86% 0.086 25)",
+          "oklch(95% 0.034 25)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cool Ground",
+        "tonalRamp": [
+          "oklch(15% 0.009 260)",
+          "oklch(26% 0.014 260)",
+          "oklch(38% 0.018 260)",
+          "oklch(50% 0.02 260)",
+          "oklch(62% 0.019 260)",
+          "oklch(74% 0.015 260)",
+          "oklch(86% 0.009 260)",
+          "oklch(95% 0.004 260)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Paper White"
+      },
+      "surface-sunken": {
+        "role": "neutral",
+        "displayName": "Sunken Mist"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline"
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Track"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Slate"
+      },
+      "text-tertiary": {
+        "role": "neutral",
+        "displayName": "Pewter"
+      },
+      "plan-line": {
+        "role": "neutral",
+        "displayName": "Plan Grey"
+      },
+      "neutral-fill-1": {
+        "role": "neutral",
+        "displayName": "Neutral Fill 1"
+      },
+      "neutral-fill-2": {
+        "role": "neutral",
+        "displayName": "Neutral Fill 2"
+      },
+      "watch-ground": {
+        "role": "neutral",
+        "displayName": "Watch Black"
+      },
+      "themes": {
+        "role": "note",
+        "displayName": "Theme pairing",
+        "purpose": "Keys ending in -dark are the dark-theme value of the same role; accent and on-accent are shared. The watch uses the dark set over watch-* neutrals."
+      }
+    },
+    "typographyMeta": {
+      "phone-large-title": {
+        "displayName": "Phone Large Title",
+        "purpose": "iOS Large Title: month or screen name."
+      },
+      "phone-verdict": {
+        "displayName": "Phone Verdict",
+        "purpose": "The pace verdict, second step on the phone, above any amount."
+      },
+      "phone-title-2": {
+        "displayName": "Phone Title 2",
+        "purpose": "iOS Title 2."
+      },
+      "phone-headline": {
+        "displayName": "Phone Headline",
+        "purpose": "iOS Headline: section heads, sheet titles."
+      },
+      "phone-body": {
+        "displayName": "Phone Body",
+        "purpose": "iOS Body: row names."
+      },
+      "phone-subheadline": {
+        "displayName": "Phone Subheadline",
+        "purpose": "iOS Subheadline: suggestion text, secondary rows."
+      },
+      "phone-footnote": {
+        "displayName": "Phone Footnote",
+        "purpose": "iOS Footnote: meta lines, row details."
+      },
+      "phone-caption": {
+        "displayName": "Phone Caption",
+        "purpose": "Chart axes."
+      },
+      "desktop-amount": {
+        "displayName": "Desktop Amount",
+        "purpose": "Selected transaction amount in the detail pane."
+      },
+      "desktop-title": {
+        "displayName": "Desktop Title",
+        "purpose": "Pane titles."
+      },
+      "desktop-ui": {
+        "displayName": "Desktop Ui",
+        "purpose": "Desktop base for every control and row."
+      },
+      "desktop-label": {
+        "displayName": "Desktop Label",
+        "purpose": "Group labels and column heads."
+      },
+      "watch-figure": {
+        "displayName": "Watch Figure",
+        "purpose": "Today's budget on the watch glance."
+      },
+      "watch-body": {
+        "displayName": "Watch Body",
+        "purpose": "Watch envelope rows."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rest",
+        "value": "0 1px 2px rgba(18,24,38,.04), 0 6px 20px rgba(18,24,38,.06)",
+        "purpose": "Cards, lists, tables, pills, secondary buttons; light only (none in dark)."
+      },
+      {
+        "name": "pop",
+        "value": "0 18px 40px rgba(18,24,38,.16), 0 2px 6px rgba(18,24,38,.06)",
+        "purpose": "Sheets and toasts, light."
+      },
+      {
+        "name": "pop-dark",
+        "value": "0 18px 40px rgba(0,0,0,.5)",
+        "purpose": "Sheets and toasts, dark."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid accent; outline-offset: 2px",
+        "purpose": "Keyboard focus on every control."
+      },
+      {
+        "name": "field-edit",
+        "value": "0 0 0 3px accent-soft",
+        "purpose": "Halo on the plan amount being edited."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "purpose": "State changes."
+      },
+      {
+        "name": "duration-standard",
+        "value": "160ms",
+        "purpose": "State changes. Motion beyond state changes is unresolved."
+      }
+    ],
+    "gradients": [
+      {
+        "name": "header-glow",
+        "value": "linear-gradient(180deg, rgba(110,92,230,.16), rgba(80,140,255,.07) 55%, transparent)",
+        "purpose": "300px behind the phone header; dark uses .24 and .08."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "390px"
+      },
+      {
+        "name": "desktop",
+        "value": "1440px"
+      }
+    ],
+    "platforms": {
+      "web-desktop": "React, Base UI, Tailwind 4; Electron on macOS",
+      "iphone": "Expo; iOS text styles mapped to Dynamic Type",
+      "watch": "SwiftUI, dark only, SF Compact"
+    },
+    "lineage": [
+      {
+        "name": "Linear",
+        "for": "structure, density, keyboard-first review"
+      },
+      {
+        "name": "Flighty",
+        "for": "the bar for finish"
+      },
+      {
+        "name": "Copilot Money",
+        "for": "warmth"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Violet action; the only accent fill. Carries its key cap on desktop.",
+      "html": "<button class=\"ds-btn ds-btn-p\">Approuver <kbd class=\"ds-kbd ds-kbd-p\">↵</kbd></button>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-btn{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;border-radius:10px;font:600 13px/1 Inter,system-ui,sans-serif;cursor:pointer;transition:filter 160ms cubic-bezier(.2,.8,.2,1)} .ds-btn-p{background:var(--acc);border:1px solid var(--acc);color:#fff} .ds-btn-p:hover{filter:brightness(1.08)} .ds-btn:focus-visible{outline:2px solid var(--acc);outline-offset:2px} .ds-kbd{font:500 11px/1 Inter,sans-serif;border-radius:5px;padding:3px 5px} .ds-kbd-p{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "The dismissive choice beside a primary (Ignorer).",
+      "html": "<button class=\"ds-btn-q\">Ignorer</button>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-btn-q{height:32px;padding:0 14px;border-radius:10px;border:1px solid transparent;background:var(--s-2);color:var(--tx);font:600 13px/1 Inter,system-ui,sans-serif;cursor:pointer} .ds-btn-q:hover{background:var(--line)} .ds-btn-q:focus-visible{outline:2px solid var(--acc);outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White control with hairline and rest shadow.",
+      "html": "<button class=\"ds-btn-s\">Copier novembre</button>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-btn-s{height:32px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--s-1);box-shadow:var(--shadow);color:var(--tx);font:600 13px/1 Inter,system-ui,sans-serif;cursor:pointer} .ds-btn-s:hover{background:var(--s-2)} .ds-btn-s:focus-visible{outline:2px solid var(--acc);outline-offset:2px}"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Linear-style sidebar items; selection in Violet Wash.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Aujourd’hui</a><a href=\"#\" class=\"on\">Revue<b>5</b></a><a href=\"#\">Plan</a></nav>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-nav{display:flex;flex-direction:column;width:220px} .ds-nav a{display:flex;align-items:center;height:32px;padding:0 9px;border-radius:9px;color:var(--tx-2);font-weight:500;text-decoration:none} .ds-nav a:hover{background:var(--s-2)} .ds-nav a:focus-visible{outline:2px solid var(--acc);outline-offset:2px} .ds-nav a.on{background:var(--acc-soft);color:var(--acc-tx)} .ds-nav b{margin-left:auto;font-weight:500;color:var(--tx-2)}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Filters and envelope rules.",
+      "html": "<span class=\"ds-chip\">Report</span>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-chip{display:inline-flex;align-items:center;height:26px;padding:0 9px;border:1px solid var(--line);border-radius:8px;background:var(--s-1);color:var(--tx-2);font-weight:500}"
+    },
+    {
+      "name": "Envelope Ring",
+      "kind": "custom",
+      "refersTo": "envelope-ring",
+      "description": "Member emoji in a ring; arc is share spent, colour is health.",
+      "html": "<span class=\"ds-er\" style=\"--c:#E5484D;--p:74\"><i>🍽️</i></span> <span class=\"ds-er\" style=\"--c:#C27A05;--p:63\"><i>🛒</i></span> <span class=\"ds-er\" style=\"--c:#22A06B;--p:35\"><i>🚆</i></span> <span class=\"ds-er\" style=\"--c:#0F9FB4;--p:42\"><i>🛟</i></span>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-er{width:34px;height:34px;border-radius:50%;display:inline-grid;place-items:center;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--track) 0)} .ds-er i{width:28px;height:28px;border-radius:50%;background:var(--s-1);display:grid;place-items:center;font-style:normal;font-size:16px;line-height:1}"
+    },
+    {
+      "name": "Suggestion Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Violet-ruled card settling a match with Ignorer or Approuver.",
+      "html": "<div class=\"ds-sug\"><div class=\"ds-sug-k\">Suggestion</div><p>Le virement de Camille, +25,00 €, solde « Camille te doit 25 € ».</p><div class=\"ds-sug-a\"><button class=\"q\">Ignorer</button><button class=\"p\">Approuver</button></div></div>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-sug{width:340px;background:var(--s-1);border:1px solid var(--acc-line);border-radius:20px;box-shadow:var(--shadow);padding:14px 16px} .ds-sug-k{color:var(--acc-tx);font-weight:600} .ds-sug p{font:400 15px/20px Inter,sans-serif;margin:6px 0 12px} .ds-sug-a{display:grid;grid-template-columns:1fr 1fr;gap:8px} .ds-sug button{height:32px;border-radius:10px;font:600 13px/1 Inter,sans-serif;cursor:pointer;border:1px solid transparent} .ds-sug .q{background:var(--s-2);color:var(--tx)} .ds-sug .p{background:var(--acc);color:#fff} .ds-sug button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}"
+    },
+    {
+      "name": "Cycle Chart",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "The month as a cycle: plan line, spending, today, gap in days, projection to run-out.",
+      "html": "<div class=\"ds-cy\"><svg viewBox=\"0 0 364 150\" width=\"320\"><path d=\"M14 140H350\" stroke=\"#E3E7EE\"/><path d=\"M14 140L344 10\" stroke=\"#8C93A1\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\" fill=\"none\"/><path d=\"M14 140L80 114.8L146 85.5L190 62.8V140Z\" fill=\"rgba(194,122,5,.16)\"/><path d=\"M14 140L80 114.8L146 85.5L190 62.8\" stroke=\"#C27A05\" stroke-width=\"2.4\" fill=\"none\"/><path d=\"M190 62.8L311 10\" stroke=\"#C27A05\" stroke-width=\"1.6\" stroke-dasharray=\"2 4\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M190 6V140\" stroke=\"#566072\"/><path d=\"M190 62.8H209.8M209.8 58.3V67.3\" stroke=\"#121826\" stroke-width=\"1.4\"/><circle cx=\"190\" cy=\"62.8\" r=\"5\" fill=\"#C27A05\" stroke=\"#fff\" stroke-width=\"2.5\"/><circle cx=\"311\" cy=\"10\" r=\"3.5\" fill=\"#fff\" stroke=\"#C27A05\" stroke-width=\"1.6\"/><text x=\"216\" y=\"82\" font-size=\"13\" font-weight=\"700\" fill=\"#121826\">+2 j</text><text x=\"303\" y=\"11\" text-anchor=\"end\" font-size=\"12\" font-weight=\"600\" fill=\"#9A6106\">à sec le 27</text></svg></div>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-cy{display:inline-block;background:var(--s-1);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:12px 8px 8px} .ds-cy svg{display:block;font-family:Inter,sans-serif}"
+    },
+    {
+      "name": "Undo Toast",
+      "kind": "custom",
+      "refersTo": "key-cap",
+      "description": "Inverted confirmation after a keyboard action, with undo.",
+      "html": "<div class=\"ds-toast\">Pharmacie du Centre rangée dans Divers <b>Annuler</b><kbd>⌘Z</kbd></div>",
+      "css": ":host{--bg:#F4F6FA;--s-1:#FFFFFF;--s-2:#EEF1F6;--line:#E3E7EE;--track:#E7EAF0;--tx:#121826;--tx-2:#566072;--tx-3:#687083;--acc:#6E5CE6;--acc-tx:#5B49D6;--acc-soft:rgba(110,92,230,.10);--acc-line:rgba(110,92,230,.45);--ok:#22A06B;--warn:#C27A05;--bad:#E5484D;--goal:#0F9FB4;--warn-tx:#9A6106;--bad-tx:#C93A3A;--plan:#8C93A1;--shadow:0 1px 2px rgba(18,24,38,.04),0 6px 20px rgba(18,24,38,.06);--shadow-pop:0 18px 40px rgba(18,24,38,.16),0 2px 6px rgba(18,24,38,.06);font:400 13px/18px Inter,system-ui,sans-serif;font-feature-settings:'tnum','cv11';color:var(--tx)} .ds-toast{display:inline-flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;border-radius:14px;background:#121826;color:#fff;box-shadow:var(--shadow-pop);font:500 13px/1 Inter,sans-serif} .ds-toast b{font-weight:600;color:#B7ACFF} .ds-toast kbd{font:500 11px/1 Inter,sans-serif;border-radius:5px;padding:3px 5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Month as a Cycle",
+    "overview": "**Creative North Star: \"The Month as a Cycle\"**\n\nShoestring draws every month as one loop: spending climbs against the plan's dashed line, a today marker cuts the chart, the gap reads in days, and a dotted projection runs to the date the money runs out. Every surface answers the same question in the same order: am I on pace, by how many days, and only then how many euros. The pace verdict (« Un peu vite », « 2 jours trop vite ») is the second type step on the phone, above any amount.\n\nThe structure and density come from Linear: a quiet sidebar, hairline-divided rows, a keyboard for every action. The finish bar is Flighty's: one confident chart, clean status, nothing half-drawn. The warmth is Copilot Money's: a cool light ground, white rounded cards with soft shadows, emoji identities and a faint violet glow behind the phone header. These are lineage, not assets: nothing is copied from them. The system refuses both the bank dashboard (a balance and a donut) and the budgeting spreadsheet.\n\nOne token source feeds three kits: the web app (React, Base UI and Tailwind 4, wrapped in Electron for the macOS desktop), the Expo iPhone app and the SwiftUI watch app. Token names here are platform-neutral so they generate Tailwind variables, React Native values and Swift constants alike. Light comes first; dark is a full peer except on the watch, which is dark only.",
+    "keyCharacteristics": [
+      "Pace before amounts: the verdict and the gap in days lead; euros follow.",
+      "One violet accent, reserved for action and selection.",
+      "Green, amber and red mean health and nothing else.",
+      "Envelopes are the member's emoji inside a health ring.",
+      "Light first: white cards, 16 to 24px corners, soft shadows. Dark: hairlines, no shadows.",
+      "Tabular figures everywhere a number can change."
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Violet marks only something you can act on or something selected, plus the faint glow behind the phone header (a 300px gradient from accent at 16%, 24% in dark, to transparent). Never use it for data, health or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Health Means Health Rule",
+        "body": "Green, amber and red appear only for health state: rings, pills, the verdict dot, the cycle chart's spending line and the gaps in days. A stale verdict drops to Pewter until it is recomputed.",
+        "section": "colors"
+      },
+      {
+        "name": "The Neutral Plan Rule",
+        "body": "Allocation shares are neutral greys; teal marks goals; the unassigned remainder is a dashed outline, never a colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Verdict First Rule",
+        "body": "On any summary surface, the pace verdict and the gap in days are set larger or earlier than any amount.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every figure that can change uses tabular numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Dark Rule",
+        "body": "In dark mode the rest shadow is none; every card keeps its 1px hairline border.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** lead every summary with the verdict and the gap in days, then the amounts.",
+      "**Do** identify an envelope by the member's emoji inside its health ring.",
+      "**Do** set every changing figure in tabular numerals (`tnum`).",
+      "**Do** use iOS text styles on the phone so type follows Dynamic Type.",
+      "**Do** give every desktop action a key and show it in a key cap.",
+      "**Do** confirm reversible actions with the undo toast instead of a dialog.",
+      "**Do** keep the pace visible when amounts are hidden or data is stale."
+    ],
+    "donts": [
+      "**Don't** use violet for data, health or decoration; it marks action and selection only.",
+      "**Don't** use green, amber or red outside health state.",
+      "**Don't** give envelopes their own hues; health colours the ring, teal marks goals.",
+      "**Don't** add shadows in dark mode.",
+      "**Don't** build a balance-and-donut dashboard or a spreadsheet grid.",
+      "**Don't** show amounts on watch complications."
+    ]
+  }
+}

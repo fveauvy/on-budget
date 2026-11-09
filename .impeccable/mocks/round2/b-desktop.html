@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>B · Cycle · Revue desktop</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0D0E10;--side:#0A0B0D;--card:#15161A;--sel:#1C1D23;--line:#23252B;--tx:#E9EAEE;--tx2:#9095A0;--tx3:#6E737D;--acc:#8E7CF8;--amber:#E8A33D;--red:#EB5B5B;--green:#4CB782}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:var(--bg);color:var(--tx);font:13px/1.4 Inter,-apple-system,system-ui,sans-serif;font-feature-settings:"tnum","cv11";-webkit-font-smoothing:antialiased}
+svg.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{display:grid;grid-template-columns:236px 1fr 440px;height:900px}
+aside{background:var(--side);border-right:1px solid var(--line);padding:12px 10px}
+.ws{display:flex;align-items:center;gap:9px;padding:6px 8px;font-weight:600}
+.av{width:22px;height:22px;border-radius:6px;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+.search{display:flex;align-items:center;gap:8px;margin:10px 0 8px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;color:var(--tx3)}
+kbd{font:500 11px/1 Inter,sans-serif;color:var(--tx2);border:1px solid var(--line);background:var(--card);border-radius:4px;padding:3px 5px;min-width:18px;text-align:center}
+.search kbd{margin-left:auto}
+.nav a{display:flex;align-items:center;gap:9px;height:30px;padding:0 8px;border-radius:7px;color:var(--tx2);font-weight:500}
+.nav a.on{background:var(--sel);color:var(--tx)}
+.nav a b{margin-left:auto;font-weight:500;color:var(--tx2)}
+.sec{margin:16px 8px 6px;color:var(--tx3);font-weight:500;font-size:12px}
+.pie{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--c);padding:1.5px;background:conic-gradient(var(--c) calc(var(--p)*1%),transparent 0) content-box;flex:none}
+.mid{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line)}
+.bar{height:46px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--line)}
+.bar h1{font-size:14px;font-weight:600}
+.bar .cnt{color:var(--tx2)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border:1px solid var(--line);border-radius:6px;color:var(--tx2);font-weight:500;background:var(--card)}
+.bar .r{margin-left:auto;display:flex;gap:8px;align-items:center;color:var(--tx2)}
+.ghead{display:flex;align-items:center;gap:8px;height:34px;padding:0 16px;background:#111216;border-bottom:1px solid var(--line);color:var(--tx2);font-weight:500}
+.ring{width:14px;height:14px;border-radius:50%;border:1.5px dashed var(--tx3);flex:none}
+.tx{display:grid;grid-template-columns:14px 180px 1fr 110px 70px 80px;align-items:center;gap:12px;height:40px;padding:0 16px;border-bottom:1px solid var(--line)}
+.tx.sel{background:var(--sel);box-shadow:inset 2px 0 0 var(--acc)}
+.tx .m{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tx .s{display:flex;align-items:center;gap:7px;color:var(--tx2);white-space:nowrap}
+.tx .s .chip{height:22px}
+.tx .ac,.tx .dt{color:var(--tx2)}
+.tx .am{text-align:right;font-weight:500}
+.pos{color:var(--green)}
+.hint{margin-top:auto;height:34px;display:flex;align-items:center;gap:14px;padding:0 16px;border-top:1px solid var(--line);color:var(--tx3)}
+.hint span{display:flex;align-items:center;gap:6px}
+.pane{padding:0;display:flex;flex-direction:column}
+.ph{height:46px;display:flex;align-items:center;gap:8px;padding:0 20px;border-bottom:1px solid var(--line);color:var(--tx2)}
+.pb{padding:22px 24px}
+.pb h2{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.amt{font-size:32px;font-weight:600;letter-spacing:-.02em;margin:10px 0 18px}
+.props{display:grid;grid-template-columns:130px 1fr;row-gap:12px;align-items:center}
+.props dt{color:var(--tx2)}
+.props dd{display:flex;align-items:center;gap:8px;font-weight:500}
+.tag{font-size:11px;font-weight:500;color:var(--acc);border:1px solid rgba(142,124,248,.4);border-radius:4px;padding:1px 5px}
+.eff s{color:var(--tx3)}.eff b{color:var(--red);font-weight:600}
+.acts{margin-top:22px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.act{display:flex;align-items:center;gap:10px;height:38px;padding:0 12px;font-weight:500}
+.act+.act{border-top:1px solid var(--line)}
+.act.p{background:rgba(142,124,248,.12)}
+.act kbd{margin-left:auto}
+.why{margin-top:18px;color:var(--tx2);line-height:1.5}
+</style></head>
+<body><div class="app">
+<aside>
+ <div class="ws"><span class="av">S</span>Mon foyer</div>
+ <div class="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>Rechercher<kbd>⌘K</kbd></div>
+ <nav class="nav">
+  <a><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 12V3.5A8.5 8.5 0 0 1 20.5 12Z"/></svg>Aujourd’hui</a>
+  <a class="on"><svg class="i" viewBox="0 0 24 24"><path d="M3 13l2.6-7.2h12.8L21 13v5.2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M3 13h5l1.6 2.6h4.8L16 13h5"/></svg>Revue<b>5</b></a>
+  <a><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg>Plan</a>
+  <a><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/></svg>Comptes</a>
+ </nav>
+ <div class="sec">Enveloppes · novembre</div>
+ <nav class="nav">
+  <a><span class="pie" style="--c:#EB5B5B;--p:74"></span>Restaurants et cafés<b>+6 j</b></a>
+  <a><span class="pie" style="--c:#E8A33D;--p:68"></span>Divers<b>+4 j</b></a>
+  <a><span class="pie" style="--c:#E8A33D;--p:63"></span>Courses<b>+3 j</b></a>
+  <a><span class="pie" style="--c:#4CB782;--p:37"></span>Loisirs<b>−5 j</b></a>
+  <a><span class="pie" style="--c:#4CB782;--p:35"></span>Transports<b>−5 j</b></a>
+ </nav>
+ <div class="sec">Objectifs</div>
+ <nav class="nav"><a><span class="pie" style="--c:#8E7CF8;--p:42"></span>Matelas de sécurité</a><a><span class="pie" style="--c:#8E7CF8;--p:18"></span>Vélo cargo</a></nav>
+</aside>
+<section class="mid">
+ <div class="bar"><h1>Revue</h1><span class="cnt">5</span><span class="chip">Tous les comptes</span><span class="chip">Suggestions</span><div class="r"><span class="chip">Affichage</span></div></div>
+ <div class="ghead"><span class="ring"></span>À revoir <span style="color:var(--tx3)">5</span></div>
+ <div class="tx"><span class="ring"></span><span class="m">Boulangerie Paul</span><span class="s"><span class="chip"><span class="pie" style="--c:#E8A33D;--p:63"></span>Courses</span></span><span class="ac">Carte</span><span class="dt">17 nov.</span><span class="am">−4,60 €</span></div>
+ <div class="tx"><span class="ring"></span><span class="m">SNCF Connect</span><span class="s"><span class="chip"><span class="pie" style="--c:#4CB782;--p:35"></span>Transports</span>−5 j → +9 j</span><span class="ac">Carte</span><span class="dt">16 nov.</span><span class="am">−38,00 €</span></div>
+ <div class="tx"><span class="ring"></span><span class="m">Carrefour City</span><span class="s"><span class="chip"><span class="pie" style="--c:#E8A33D;--p:63"></span>Courses</span>+3 j → +5 j</span><span class="ac">Carte</span><span class="dt">16 nov.</span><span class="am">−23,47 €</span></div>
+ <div class="tx sel"><span class="ring"></span><span class="m">Le Comptoir du Marché</span><span class="s"><span class="chip"><span class="pie" style="--c:#EB5B5B;--p:74"></span>Restaurants et cafés</span>+6 j → +9 j</span><span class="ac">Carte</span><span class="dt">15 nov.</span><span class="am">−9,50 €</span></div>
+ <div class="tx"><span class="ring"></span><span class="m">Virement de Camille</span><span class="s"><span class="chip">Remboursement attendu</span></span><span class="ac">Compte courant</span><span class="dt">15 nov.</span><span class="am pos">+25,00 €</span></div>
+ <div class="hint"><span><kbd>J</kbd><kbd>K</kbd>naviguer</span><span><kbd>1</kbd>accepter</span><span><kbd>2</kbd>autre enveloppe</span><span><kbd>⌘K</kbd>commandes</span></div>
+</section>
+<section class="pane">
+ <div class="ph"><span class="ring"></span>À revoir · 4 sur 5</div>
+ <div class="pb">
+  <h2>Le Comptoir du Marché</h2>
+  <div class="amt">−9,50 €</div>
+  <dl class="props">
+   <dt>Date</dt><dd>dimanche 15 novembre, 10:20</dd>
+   <dt>Compte</dt><dd>Carte</dd>
+   <dt>Enveloppe</dt><dd><span class="pie" style="--c:#EB5B5B;--p:74"></span>Restaurants et cafés<span class="tag">suggestion</span></dd>
+   <dt>Effet sur le rythme</dt><dd class="eff"><s>+6 j</s>→<b>+9 j</b></dd>
+   <dt>Reste</dt><dd>31 € → 21,50 € sur 120 €</dd>
+  </dl>
+  <div class="acts">
+   <div class="act p">Accepter « Restaurants et cafés »<kbd>1</kbd></div>
+   <div class="act">Choisir une autre enveloppe<kbd>2</kbd></div>
+   <div class="act">Diviser la transaction<kbd>3</kbd></div>
+   <div class="act">C’est un virement<kbd>T</kbd></div>
+   <div class="act">Passer pour l’instant<kbd>S</kbd></div>
+  </div>
+  <p class="why">Suggestion d’après 12 paiements chez ce marchand. Restaurants et cafés est déjà l’enveloppe la plus rapide du mois.</p>
+ </div>
+</section>
+</div></body></html>

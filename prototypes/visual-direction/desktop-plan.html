@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>PROTOTYPE · Desktop · Plan</title>
+<script>document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kit.css">
+<style>
+.desk{grid-template-columns:240px 1fr 340px}
+.mid{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--s-1)}
+.seg span{padding:5px 11px;color:var(--tx-2);font-weight:500}.seg span+span{border-left:1px solid var(--line)}
+.seg .on{background:var(--acc-soft);color:var(--acc-tx);font-weight:600}
+.head{display:flex;align-items:flex-end;gap:16px;padding:18px 24px 14px}
+.head h2{font:700 22px/28px var(--font);letter-spacing:-.015em}
+.head p{color:var(--tx-2);margin-top:2px}
+.head .r{margin-left:auto}
+.tbl{margin:0 16px;background:var(--s-1);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.cols,.row,.gh{display:grid;grid-template-columns:28px 1fr 150px 130px 170px;align-items:center;gap:12px;padding:0 16px}
+.cols{height:32px;color:var(--tx-2);font-weight:600;font-size:12px;border-bottom:1px solid var(--line)}
+.cols span:nth-child(3),.cols span:nth-child(4){text-align:right}.cols span:last-child{padding-left:18px}
+.gh{height:36px;background:var(--bg);border-bottom:1px solid var(--line);color:var(--tx-2);font-weight:600}
+.gh .tot{grid-column:4;text-align:right;color:var(--tx);padding-right:11px}
+.row{height:44px;border-bottom:1px solid var(--line)}
+.row .n{font-weight:600}
+.row .was{text-align:right;color:var(--tx-2)}
+.row .amt{justify-self:end;width:112px;height:30px;display:flex;align-items:center;justify-content:flex-end;padding:0 10px;border-radius:8px;font-weight:600;border:1px solid transparent}
+.row.edit{background:var(--acc-soft)}
+.row.edit .amt{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc-soft);background:var(--s-1)}
+.row .rule{padding-left:18px}
+.note{color:var(--tx-2);font-size:12px;margin-left:8px;font-weight:400;white-space:nowrap}
+.hint{margin-top:auto;height:38px;display:flex;align-items:center;gap:16px;padding:0 20px;border-top:1px solid var(--line);color:var(--tx-2)}
+.hint span{display:flex;align-items:center;gap:6px}
+.pane{padding:22px}
+.pane h3{font:600 17px/22px var(--font)}
+.pane .lbl{color:var(--tx-2);margin-top:4px}
+.stack{display:flex;height:10px;border-radius:5px;overflow:hidden;margin:16px 0 10px;background:var(--track)}
+.stack i{display:block;height:100%}
+.legend{display:grid;grid-template-columns:10px 1fr auto;gap:8px;align-items:center;color:var(--tx-2)}
+.legend i{width:8px;height:8px;border-radius:2px}
+.legend b{color:var(--tx);font-weight:600}
+.legend .free{border:1.5px dashed var(--tx-3);width:8px;height:8px}
+.sugs{margin-top:24px}
+.sugs h4{font-weight:600;margin-bottom:8px}
+.sugs .list>div{display:flex;align-items:center;gap:10px;padding:11px 12px;font-weight:500}
+.sugs .list kbd{margin-left:auto}
+</style></head>
+<body><div class="desk">
+<aside class="side">
+ <div class="ws"><span class="av">S</span>Mon foyer</div>
+ <div class="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>Rechercher<kbd>⌘K</kbd></div>
+ <nav class="nav">
+  <a><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 12V3.5A8.5 8.5 0 0 1 20.5 12Z"/></svg>Aujourd’hui</a>
+  <a><svg class="i" viewBox="0 0 24 24"><path d="M3 13l2.6-7.2h12.8L21 13v5.2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/><path d="M3 13h5l1.6 2.6h4.8L16 13h5"/></svg>Revue<b>5</b></a>
+  <a class="on"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg>Plan</a>
+  <a><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/></svg>Comptes</a>
+ </nav>
+ <div class="nsec">Objectifs</div>
+ <nav class="nav"><a><span class="er sm c-goal" style="--p:42"><i>🛟</i></span>Matelas de sécurité<b>42 %</b></a><a><span class="er sm c-goal" style="--p:18"><i>🚲</i></span>Vélo cargo<b>18 %</b></a></nav>
+</aside>
+<section class="mid">
+ <div class="bar"><h1>Plan</h1><span class="seg"><span>Novembre</span><span class="on">Décembre</span><span>Janvier</span></span><div class="r"><span class="btn">Copier novembre</span></div></div>
+ <div class="head"><div><h2>Décembre</h2><p>Revenus attendus : 2 480 € · salaire le 27 novembre</p></div><div class="r"><span class="pill"><span class="todo" style="width:12px;height:12px"></span>245 € à répartir</span></div></div>
+ <div class="tbl">
+ <div class="cols"><span></span><span>Enveloppe</span><span>Novembre à ce jour</span><span>Décembre</span><span>En fin de mois</span></div>
+ <div class="gh"><span></span><span>Charges fixes</span><span class="tot">1 010 €</span></div>
+ <div class="row"><span class="er sm c-ok" style="--p:100"><i>🏠</i></span><span class="n">Loyer</span><span class="was">820 € / 820</span><span class="amt">820 €</span><span class="rule"><span class="chip">Remise à zéro</span></span></div>
+ <div class="row"><span class="er sm c-ok" style="--p:95"><i>⚡</i></span><span class="n">Énergie</span><span class="was">61 € / 64</span><span class="amt">64 €</span><span class="rule"><span class="chip">Report</span></span></div>
+ <div class="row"><span class="er sm c-ok" style="--p:60"><i>📶</i></span><span class="n">Internet, mobile et assurances</span><span class="was">76 € / 126</span><span class="amt">126 €</span><span class="rule"><span class="chip">Remise à zéro</span></span></div>
+ <div class="gh"><span></span><span>Dépenses flexibles</span><span class="tot">600 €</span></div>
+ <div class="row"><span class="er sm c-warn" style="--p:63"><i>🛒</i></span><span class="n">Courses</span><span class="was">202 € / 320</span><span class="amt">320 €</span><span class="rule"><span class="chip">Report</span></span></div>
+ <div class="row edit"><span class="er sm c-bad" style="--p:74"><i>🍽️</i></span><span class="n">Restaurants et cafés<span class="note">−20 € sur novembre</span></span><span class="was">89 € / 120</span><span class="amt">100 €</span><span class="rule"><span class="chip">Remise à zéro</span></span></div>
+ <div class="row"><span class="er sm c-ok" style="--p:35"><i>🚆</i></span><span class="n">Transports</span><span class="was">28 € / 80</span><span class="amt">80 €</span><span class="rule"><span class="chip">Report</span></span></div>
+ <div class="row"><span class="er sm c-ok" style="--p:37"><i>🎟️</i></span><span class="n">Loisirs</span><span class="was">22 € / 60</span><span class="amt">60 €</span><span class="rule"><span class="chip">Vers Vélo cargo</span></span></div>
+ <div class="row"><span class="er sm c-warn" style="--p:68"><i>📦</i></span><span class="n">Divers</span><span class="was">27 € / 40</span><span class="amt">40 €</span><span class="rule"><span class="chip">Remise à zéro</span></span></div>
+ <div class="gh"><span></span><span>Objectifs</span><span class="tot">625 €</span></div>
+ <div class="row"><span class="er sm c-goal" style="--p:42"><i>🛟</i></span><span class="n">Matelas de sécurité<span class="note">2 520 € sur 6 000 €</span></span><span class="was">400 € / 400</span><span class="amt">400 €</span><span class="rule"><span class="chip">Report</span></span></div>
+ <div class="row" style="border-bottom:0"><span class="er sm c-goal" style="--p:18"><i>🚲</i></span><span class="n">Vélo cargo<span class="note">756 € sur 4 200 €</span></span><span class="was">225 € / 225</span><span class="amt">225 €</span><span class="rule"><span class="chip">Report</span></span></div>
+ </div>
+ <div class="hint"><span><kbd>Tab</kbd>champ suivant</span><span><kbd>↑</kbd><kbd>↓</kbd>±10 €</span><span><kbd>⌘K</kbd>commandes</span></div>
+</section>
+<section class="pane">
+ <h3>Il reste 245 € à répartir</h3>
+ <p class="lbl">Donne un rôle à chaque euro avant le 1er décembre.</p>
+ <div class="stack"><i style="width:40.7%;background:var(--n2)"></i><i style="width:24.2%;background:var(--n1)"></i><i style="width:25.2%;background:var(--goal)"></i></div>
+ <div class="legend"><i style="background:var(--n2)"></i><span>Charges fixes</span><b>1 010 €</b><i style="background:var(--n1)"></i><span>Dépenses flexibles</span><b>600 €</b><i style="background:var(--goal)"></i><span>Objectifs</span><b>625 €</b><i class="free"></i><span>À répartir</span><b>245 €</b></div>
+ <div class="sugs"><h4>Pour arriver à zéro</h4>
+  <div class="list"><div><span class="er sm c-goal" style="--p:42"><i>🛟</i></span>Tout sur Matelas de sécurité<kbd>1</kbd></div><div><span class="er sm c-goal" style="--p:18"><i>🚲</i></span>Tout sur Vélo cargo<kbd>2</kbd></div><div>Répartir comme novembre<kbd>3</kbd></div></div>
+ </div>
+</section>
+</div></body></html>

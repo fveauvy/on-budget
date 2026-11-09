@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Signalétique jaune</title>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--sign:#FFC917;--ink:#111;--ochre:#4A3900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:390px;height:844px;margin:0;overflow:hidden;background:var(--sign)}
+body{position:relative;color:var(--ink);font:400 17px/1.3 "Mukta",sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sys{font-family:-apple-system,"SF Pro Text",system-ui,sans-serif}
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:6px 26px 0 48px;font-size:17px;font-weight:600}
+.sb span{display:flex;gap:6px;align-items:center}
+.nav{height:44px;position:relative;text-align:center;padding-top:3px}
+.nav b{display:block;font-size:17px;font-weight:600;line-height:21px}
+.nav small{font-size:13px;color:var(--ochre)}
+.nav i{position:absolute;right:16px;top:2px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 2px 8px rgba(80,60,0,.12)}
+main{padding:10px 16px 0}
+.sq{flex:none;width:48px;height:48px;border-radius:3px;background:var(--ink);color:#fff;display:grid;place-items:center}
+.v1{display:flex;align-items:center;gap:12px}
+h1{font-size:56px;line-height:1;font-weight:700;letter-spacing:-.02em}
+.why{margin:6px 0 0 60px;color:var(--ochre)}
+.today{display:flex;align-items:baseline;gap:8px;margin-top:18px}
+.gate{font-size:140px;line-height:.8;font-weight:800;letter-spacing:-.04em;word-spacing:-.06em;margin-left:-.125em}
+.today span{font-size:24px;font-weight:700}
+.calc{margin-top:-4px;color:var(--ochre)}
+.next{display:flex;align-items:center;gap:12px;margin-top:14px;padding:8px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.next .t{flex:1}
+.next strong{display:block;font-size:28px;line-height:1.05;font-weight:700}
+.next small{font-size:15px;color:var(--ochre)}
+.cats{list-style:none}
+.cats li{display:grid;grid-template-columns:40px 1fr auto;column-gap:20px;align-items:baseline;padding:6px 0;background:linear-gradient(var(--ink),var(--ink)) 60px 100%/calc(100% - 60px) 1px no-repeat}
+.cats li:last-child{background:none}
+.cats .sq{width:40px;height:40px;grid-row:span 2;align-self:center}
+.cats .n,.cats b{font-size:22px;font-weight:600;line-height:1.1}
+.cats b{font-weight:700;text-align:right}
+.cats small{font-size:15px;line-height:1.25;color:var(--ochre)}
+.cats small+small{text-align:right}
+.hot .st{font-size:22px;line-height:1.1;font-weight:700;color:var(--ink)}
+.st .i{vertical-align:-5px;margin:0 2px 0 -3px}
+.tabs{position:absolute;left:16px;right:16px;bottom:25px;height:62px;border-radius:31px;display:flex;padding:4px;background:rgba(255,253,240,.62);-webkit-backdrop-filter:blur(14px) saturate(1.8);backdrop-filter:blur(14px) saturate(1.8);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 6px 20px rgba(80,60,0,.18)}
+.tabs a{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:27px;font-size:10px;font-weight:600;color:#4D4A40;text-decoration:none}
+.tabs a.on{color:var(--ink);background:rgba(17,17,17,.08)}
+.badge{position:absolute;top:5px;left:50%;margin-left:6px;min-width:18px;height:18px;border-radius:9px;background:#D70015;color:#fff;font-size:12px;font-weight:600;line-height:18px;text-align:center}
+.home{position:absolute;bottom:8px;left:50%;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:var(--ink)}
+::selection{background:var(--ink);color:var(--sign)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="fast" viewBox="0 0 24 24"><path d="M5 6l6 6-6 6M13 6l6 6-6 6"/></symbol>
+<symbol id="tray" viewBox="0 0 24 24"><path d="M3 13h5l1.5 3h5l1.5-3h5M5.5 5h13L21 13v6H3v-6z"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+<symbol id="cup" viewBox="0 0 24 24"><path d="M4 9h12v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5V6M12 3.5V6M4 21h12"/></symbol>
+<symbol id="bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5zM4 7.5l8 3.5 8-3.5M12 11v9"/></symbol>
+<symbol id="ticket" viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4zM14 7v10"/></symbol>
+<symbol id="tram" viewBox="0 0 24 24"><path d="M7 4h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM5 11h14M9 17l-2 3.5M15 17l2 3.5"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+<symbol id="pie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12h8.5"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</defs></svg>
+
+<div class="sb sys">9:41<span>
+<svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" width="3" height="12" rx=".8"/></svg>
+<svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 4.6a9.5 9.5 0 0 1 13 0M4.3 7.6a5.4 5.4 0 0 1 7.4 0"/><circle cx="8" cy="10.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="currentColor"/><path d="M25 4.5v4" stroke="currentColor" stroke-opacity=".4" stroke-width="1.5" stroke-linecap="round"/></svg>
+</span></div>
+
+<header class="nav sys"><b>Aujourd’hui</b><small>mardi 17 novembre</small>
+<i aria-label="Nouvelle dépense"><svg class="i"><use href="#plus"/></svg></i></header>
+
+<main>
+<section>
+<div class="v1"><span class="sq"><svg class="i"><use href="#fast"/></svg></span><h1>Un peu vite</h1></div>
+<p class="why">Le plan est déjà dépensé jusqu’au 19<br>soit 2&nbsp;jours et 37&nbsp;€ d’avance</p>
+<p class="today"><b class="gate">18&nbsp;€</b><span>aujourd’hui</span></p>
+<p class="calc">252&nbsp;€ restants ÷ 14&nbsp;jours<br>jusqu’au 30 novembre, sur 620&nbsp;€ prévus</p>
+</section>
+
+<a class="next"><span class="sq"><svg class="i"><use href="#tray"/></svg></span>
+<span class="t"><strong>5 à revoir</strong><small>nouvelles transactions</small></span>
+<span class="sq"><svg class="i"><use href="#arrow"/></svg></span></a>
+
+<ul class="cats">
+<li class="hot"><span class="sq"><svg class="i"><use href="#cup"/></svg></span><span class="n">Restaurants et cafés</span><b>31&nbsp;€</b><small class="st"><svg class="i"><use href="#fast"/></svg>6&nbsp;j d’avance</small><small>sur 120&nbsp;€</small></li>
+<li><span class="sq"><svg class="i"><use href="#box"/></svg></span><span class="n">Divers</span><b>13&nbsp;€</b><small>4&nbsp;j d’avance</small><small>sur 40&nbsp;€</small></li>
+<li><span class="sq"><svg class="i"><use href="#bag"/></svg></span><span class="n">Courses</span><b>118&nbsp;€</b><small>3&nbsp;j d’avance</small><small>sur 320&nbsp;€</small></li>
+<li><span class="sq"><svg class="i"><use href="#ticket"/></svg></span><span class="n">Loisirs</span><b>38&nbsp;€</b><small>de la marge</small><small>sur 60&nbsp;€</small></li>
+<li><span class="sq"><svg class="i"><use href="#tram"/></svg></span><span class="n">Transports</span><b>52&nbsp;€</b><small>de la marge</small><small>sur 80&nbsp;€</small></li>
+</ul>
+</main>
+
+<nav class="tabs sys">
+<a class="on"><svg class="i"><use href="#sun"/></svg>Aujourd’hui</a>
+<a><svg class="i"><use href="#tray"/></svg>Revue<span class="badge">5</span></a>
+<a><svg class="i"><use href="#pie"/></svg>Plan</a>
+<a><svg class="i"><use href="#card"/></svg>Comptes</a>
+</nav>
+<div class="home"></div>
+</body>
+</html>

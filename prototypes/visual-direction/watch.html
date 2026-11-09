@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr" data-theme="dark"><head><meta charset="utf-8"><title>PROTOTYPE · Apple Watch · coup d’œil</title>
+<link rel="stylesheet" href="kit.css">
+<style>
+body{width:760px;height:340px;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:44px;background:#1A1B1F;font-family:var(--font-watch)}
+.w,.face{width:198px;height:242px;border-radius:42px;background:#000;color:#fff;position:relative;box-shadow:0 0 0 7px #2A2B30,0 0 0 8px #3A3B41}
+.w{padding:14px 14px 12px}
+.top{display:flex;justify-content:space-between;font-size:15px;font-weight:600}
+.top .app{color:var(--acc-tx)}
+.h{display:flex;align-items:center;gap:6px;margin-top:8px;color:var(--warn);font-weight:600;font-size:16px}
+.h .gap{color:#fff;margin-left:auto;font-size:14px}
+.big{font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1;margin-top:6px}
+.big small{font-size:13px;font-weight:500;color:#A0A4AD;letter-spacing:0;margin-left:4px}
+.bar{position:relative;height:6px;border-radius:3px;background:#2A2B30;margin:10px 0 9px}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:60%;border-radius:3px;background:var(--warn)}
+.bar b{position:absolute;left:53.3%;top:-3px;width:2px;height:12px;background:#fff;border-radius:1px}
+.env{display:flex;align-items:center;gap:8px;font-size:13.5px;height:26px}
+.env .er{--sz:20px}.env .er i{background:#000;font-size:10px}
+.env b{margin-left:auto;font-weight:600}
+.age{position:absolute;left:14px;bottom:10px;color:#8E939C;font-size:11px}
+.clock{position:absolute;top:18px;width:100%;text-align:center;font-size:42px;font-weight:300}
+.rect{position:absolute;left:14px;right:14px;top:84px;padding:8px 10px;border-radius:12px;background:#1C1C1F}
+.rect .t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--warn)}
+.rect .t span{margin-left:auto;color:#fff}
+.rect .bar{margin:8px 0 0}
+.circ{position:absolute;left:50%;bottom:22px;width:56px;height:56px;margin-left:-28px}
+.circ .n{position:absolute;inset:0;display:grid;place-items:center;font-weight:600;font-size:15px;line-height:1;text-align:center}
+.circ .n small{display:block;font-size:9px;color:#A0A4AD;font-weight:500}
+.cap{position:absolute;bottom:-30px;left:-20px;right:-20px;text-align:center;color:#A0A4AD;font:12px/1.3 var(--font)}
+</style></head>
+<body>
+<div class="w">
+ <div class="top"><span class="app">Shoestring</span><span>9:41</span></div>
+ <div class="h"><span class="dot c-warn"></span>Un peu vite<span class="gap">+2 j</span></div>
+ <div class="big">18 €<small>aujourd’hui</small></div>
+ <div class="bar"><i></i><b></b></div>
+ <div class="env"><span class="er c-bad" style="--p:74"><i>🍽️</i></span>Restaurants<b class="bad">+6 j</b></div>
+ <div class="env"><span class="er c-warn" style="--p:68"><i>📦</i></span>Divers<b class="warn">+4 j</b></div>
+ <div class="age">Mis à jour il y a 12 min</div>
+ <div class="cap">Coup d’œil, relayé par l’iPhone</div>
+</div>
+<div class="face">
+ <div class="clock">9:41</div>
+ <div class="rect" aria-label="Rythme : un peu vite, 2 jours trop vite"><div class="t"><span class="dot c-warn" style="margin:0"></span>Un peu vite<span>+2 j</span></div><div class="bar"><i></i><b></b></div></div>
+ <div class="circ" aria-label="60 % du budget flexible dépensé, 53 % du mois écoulé">
+  <svg width="56" height="56" viewBox="0 0 56 56"><circle cx="28" cy="28" r="23" fill="none" stroke="#2A2B30" stroke-width="5"/><circle cx="28" cy="28" r="23" fill="none" stroke="#E8A33D" stroke-width="5" stroke-linecap="round" stroke-dasharray="86.7 144.5" transform="rotate(-90 28 28)"/><path d="M28 2v6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" transform="rotate(192 28 28)"/></svg>
+  <div class="n"><div>+2<small>jours</small></div></div>
+ </div>
+ <div class="cap">Complications, sans montant</div>
+</div>
+</body></html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Enveloppes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap">
+<style>
+:root{
+  --g:#F3F4EF; --ink:#1E2326; --kraft:#C8A27A; --n:46.7%; /* notch: share that should be left today */
+  --ink2:color-mix(in srgb,var(--ink) 72%,var(--g));
+  --kt:color-mix(in srgb,var(--kraft) 42%,var(--g));
+  --ui:-apple-system,"SF Pro Text","SF Pro",system-ui,"Helvetica Neue",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:390px;height:844px;overflow:hidden;margin:0;background:var(--g)}
+body{position:relative;color:var(--ink);font:400 17px/22px var(--ui);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+::selection{background:color-mix(in srgb,var(--kraft) 45%,transparent)}
+.d,.w{font-family:Archivo,var(--ui);font-stretch:115%;font-weight:800;letter-spacing:-.02em}
+.w{font-weight:500;letter-spacing:-.01em;color:var(--ink2)}
+
+/* Status bar and navigation */
+.sb{position:absolute;inset:0 0 auto;height:47px;display:flex;justify-content:space-between;align-items:center;padding:3px 26px 0 22px}
+.sb time{width:74px;text-align:center;font-weight:600}
+.sb span{display:flex;gap:6px;align-items:center}
+.nav{position:absolute;top:47px;left:0;right:0;height:44px;text-align:center}
+.nav b{display:block;padding-top:4px;font-weight:600;line-height:20px}
+.nav small{display:block;font-size:12px;line-height:15px;color:var(--ink2)}
+.nav a{position:absolute;right:16px;top:4px;height:36px;padding:0 14px;border-radius:18px;background:#fff;font-weight:600;font-size:15px;line-height:36px;box-shadow:0 2px 8px rgba(30,35,38,.1),0 0 0 .5px rgba(30,35,38,.12)}
+main{position:absolute;top:95px;left:16px;right:16px}
+
+/* Envelope: the fill is the money left, the notch is where the fill should be today */
+.e{position:relative;height:16px;border-radius:3px;
+  --gh:color-mix(in srgb,var(--c) 32%,var(--kt));
+  background:linear-gradient(90deg,var(--c) var(--l),var(--gh) var(--l) var(--n),transparent var(--n)) var(--kt)}
+.e::before,.e::after{content:"";position:absolute;left:var(--n)}
+.e::before{top:-1px;width:10px;height:6px;margin-left:-5px;background:var(--bg,var(--g));clip-path:polygon(0 0,100% 0,50% 100%)}
+.e::after{top:4px;bottom:-4px;width:2px;margin-left:-1px;border-radius:1px;background:var(--tk,var(--ink))}
+
+/* The one reversed plate: the pace verdict */
+.plate{padding:16px 20px;border-radius:24px;background:var(--ink);color:var(--g);
+  --c:var(--g);--kt:color-mix(in srgb,var(--kraft) 34%,var(--ink));--bg:var(--ink);--tk:var(--g)}
+.plate h1{display:flex;justify-content:space-between;align-items:baseline;font-size:40px;line-height:44px}
+.plate h1 em{font-style:normal;font-size:24px;color:var(--kraft)}
+.plate .e{height:18px;margin-top:12px}
+.plate p{margin-top:12px;font-size:15px;line-height:20px;color:color-mix(in srgb,var(--g) 74%,var(--ink))}
+
+/* Amounts */
+.a1{margin-top:20px;font-size:48px;line-height:52px}
+.a1 .w{font-size:22px}
+.note{margin-top:4px;font-size:15px;line-height:20px;color:var(--ink2)}
+.a2{margin-top:18px;font-size:22px;line-height:26px;font-weight:inherit}
+.a2+.note{margin-top:2px}
+
+/* Category envelopes */
+ul{list-style:none;margin-top:16px;display:grid;gap:14px}
+li p{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+li b{font-weight:500}
+li span{font-size:15px;color:var(--ink2)}
+li strong{font-weight:600;color:var(--ink)}
+li em{margin-left:auto;font-style:normal;font-weight:600;font-size:15px}
+li em.m{font-weight:400;color:var(--ink2)}
+li em.hot{margin-right:-7px;padding:0 7px;border-radius:7px;color:#9B3641;background:color-mix(in srgb,#C8505A 15%,var(--g))}
+
+/* Tab bar */
+.tabs{position:absolute;left:16px;right:16px;bottom:24px;height:62px;padding:4px;border-radius:31px;display:grid;grid-template-columns:repeat(4,1fr);
+  background:rgba(255,255,255,.88);box-shadow:0 8px 24px rgba(30,35,38,.12),0 0 0 .5px rgba(30,35,38,.1)}
+.tabs a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:27px;font-size:10px;line-height:12px;font-weight:600;color:#666C69}
+.tabs a.on{color:var(--ink);background:rgba(30,35,38,.07)}
+.tabs svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabs i{position:absolute;top:4px;left:calc(50% + 6px);min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--ink);color:var(--g);font:600 12px/18px var(--ui);text-align:center}
+.home{position:absolute;bottom:8px;left:128px;width:134px;height:5px;border-radius:3px;background:var(--ink)}
+</style>
+</head>
+<body>
+<header class="sb">
+  <time>9:41</time>
+  <span>
+    <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><rect y="8" width="3" height="4" rx="1"/><rect x="4.6" y="5.5" width="3" height="6.5" rx="1"/><rect x="9.2" y="3" width="3" height="9" rx="1"/><rect x="13.8" width="3" height="12" rx="1"/></svg>
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.2 4.3a10 10 0 0 1 13.6 0M3.9 7.2a6.2 6.2 0 0 1 8.2 0"/><circle cx="8" cy="10.2" r="1.4" fill="currentColor" stroke="none"/></svg>
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="currentColor"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2"/><path d="M25.2 4.5v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".45"/></svg>
+  </span>
+</header>
+<div class="nav"><b>Aujourd’hui</b><small>mardi 17 novembre</small><a>5 à revoir</a></div>
+
+<main>
+  <section class="plate">
+    <h1><span class="d">Un peu vite</span><em class="d">+2&nbsp;j</em></h1>
+    <div class="e" style="--l:40.6%"></div>
+    <p>Vous avez dépensé ce que le plan prévoit jusqu’au 19&nbsp;: 37&nbsp;€ au-dessus du rythme.</p>
+  </section>
+
+  <p class="a1"><span class="d">18&nbsp;€</span> <span class="w">pour aujourd’hui</span></p>
+  <p class="note">252&nbsp;€ ÷ 14 jours restants, aujourd’hui compris</p>
+  <h2 class="a2"><span class="d">252&nbsp;€</span> <span class="w">jusqu’au 30 novembre</span></h2>
+  <p class="note">sur 620&nbsp;€ prévus en dépenses flexibles</p>
+
+  <ul>
+    <li style="--c:#3E6FB0;--l:36.9%"><p><b>Courses</b><span><strong>118&nbsp;€</strong> sur 320&nbsp;€</span><em>+3&nbsp;j</em></p><div class="e"></div></li>
+    <li style="--c:#C8505A;--l:25.8%"><p><b>Restaurants et cafés</b><span><strong>31&nbsp;€</strong> sur 120&nbsp;€</span><em class="hot">+6&nbsp;j</em></p><div class="e"></div></li>
+    <li style="--c:#8D9A93;--l:65%"><p><b>Transports</b><span><strong>52&nbsp;€</strong> sur 80&nbsp;€</span><em class="m">5&nbsp;j de marge</em></p><div class="e"></div></li>
+    <li style="--c:#E58A2E;--l:63.3%"><p><b>Loisirs</b><span><strong>38&nbsp;€</strong> sur 60&nbsp;€</span><em class="m">5&nbsp;j de marge</em></p><div class="e"></div></li>
+    <li style="--c:#3C9B6B;--l:32.5%"><p><b>Divers</b><span><strong>13&nbsp;€</strong> sur 40&nbsp;€</span><em>+4&nbsp;j</em></p><div class="e"></div></li>
+  </ul>
+</main>
+
+<nav class="tabs">
+  <a class="on"><svg viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="3"/><path d="M4 10h16M8.5 3.5v3.5M15.5 3.5v3.5"/></svg>Aujourd’hui</a>
+  <a><svg viewBox="0 0 24 24"><path d="M4 13.5 6.7 6.6A2 2 0 0 1 8.6 5.3h6.8a2 2 0 0 1 1.9 1.3L20 13.5V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M4 13.5h4.6l1.2 2.3h4.4l1.2-2.3H20"/></svg><i>5</i>Revue</a>
+  <a><svg viewBox="0 0 24 24"><path d="M11 4.5a8.5 8.5 0 1 0 8.5 8.5H11z"/><path d="M14 3.5a6.5 6.5 0 0 1 6.5 6.5H14z"/></svg>Plan</a>
+  <a><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M3.5 9.5h17M7 15h3"/></svg>Comptes</a>
+</nav>
+<i class="home"></i>
+</body>
+</html>
